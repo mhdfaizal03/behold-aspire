@@ -75,10 +75,10 @@ export default function App() {
       className="font-sans antialiased text-black bg-[#f3f3f3] selection:bg-gray-200 min-h-screen relative"
     >
 
-      Premium Navbar
+      {/* Premium Navbar */}
       <Navbar setView={setView} currentView={view} />
 
-      Route Views
+      {/* Route Views */}
       {view === 'landing' && (
         <main className="fade-in-up">
           {/* Hero Section */}

@@ -65,8 +65,8 @@ export default function Navbar({ setView, currentView }) {
   };
 
   return (
-    <header className="sticky top-0 w-full bg-white/60 backdrop-blur-md z-50 border-b border-black/[0.05] text-black transition-all">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between relative">
+    <header className="sticky top-0 w-full bg-white/60 backdrop-blur-md z-50 border-b border-black/[0.05] text-black transition-all relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
         {/* Left Column: Logo & Nav Links */}
         <div className="flex items-center space-x-12">
           <span 
@@ -158,62 +158,62 @@ export default function Navbar({ setView, currentView }) {
         >
           {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
-
-        {/* Mobile Dropdown Menu */}
-        {isMenuOpen && (
-          <div className="absolute top-16 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-black/[0.05] px-6 py-8 flex flex-col gap-6 text-xs font-bold uppercase tracking-wider text-black/60 md:hidden shadow-xl animate-in fade-in slide-in-from-top-4 duration-300 rounded-none">
-            <button
-              onClick={() => scrollToSection('services')}
-              className={`text-left border-b border-black/[0.03] pb-2 cursor-pointer ${
-                activeSection === 'services' && currentView === 'landing' ? 'text-black' : 'hover:text-black'
-              }`}
-            >
-              services
-            </button>
-            <button
-              onClick={() => { setView('test'); setIsMenuOpen(false); }}
-              className={`text-left border-b border-black/[0.03] pb-2 cursor-pointer ${
-                currentView === 'test' ? 'text-black' : 'hover:text-black'
-              }`}
-            >
-              aptitude test
-            </button>
-            <button
-              onClick={() => scrollToSection('about')}
-              className={`text-left border-b border-black/[0.03] pb-2 cursor-pointer ${
-                activeSection === 'about' && currentView === 'landing' ? 'text-black' : 'hover:text-black'
-              }`}
-            >
-              why us
-            </button>
-            <button
-              onClick={() => scrollToSection('faqs')}
-              className={`text-left border-b border-black/[0.03] pb-2 cursor-pointer ${
-                activeSection === 'faqs' && currentView === 'landing' ? 'text-black' : 'hover:text-black'
-              }`}
-            >
-              faqs
-            </button>
-            <button
-              onClick={() => { setView('profile'); setIsMenuOpen(false); }}
-              className={`text-left border-b border-black/[0.03] pb-2 cursor-pointer ${
-                currentView === 'profile' ? 'text-black' : 'hover:text-black'
-              }`}
-            >
-              student profile
-            </button>
-            <button
-              onClick={() => { setView('booking'); setIsMenuOpen(false); }}
-              className={`text-left border-b border-black/[0.03] pb-2 cursor-pointer flex items-center justify-between ${
-                currentView === 'booking' ? 'text-black' : 'hover:text-black'
-              }`}
-            >
-              <span>book session</span>
-              <ArrowUpRight className="w-4 h-4 text-brand" />
-            </button>
-          </div>
-        )}
       </div>
+
+      {/* Mobile Dropdown Menu (Edge-to-edge aligned under sticky header) */}
+      {isMenuOpen && (
+        <div className="absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-black/[0.05] px-4 sm:px-6 py-8 flex flex-col gap-6 text-xs font-bold uppercase tracking-wider text-black/60 md:hidden shadow-xl animate-in fade-in slide-in-from-top-4 duration-300 rounded-none">
+          <button
+            onClick={() => scrollToSection('services')}
+            className={`text-left border-b border-black/[0.03] pb-2 cursor-pointer ${
+              activeSection === 'services' && currentView === 'landing' ? 'text-black' : 'hover:text-black'
+            }`}
+          >
+            services
+          </button>
+          <button
+            onClick={() => { setView('test'); setIsMenuOpen(false); }}
+            className={`text-left border-b border-black/[0.03] pb-2 cursor-pointer ${
+              currentView === 'test' ? 'text-black' : 'hover:text-black'
+            }`}
+          >
+            aptitude test
+          </button>
+          <button
+            onClick={() => scrollToSection('about')}
+            className={`text-left border-b border-black/[0.03] pb-2 cursor-pointer ${
+              activeSection === 'about' && currentView === 'landing' ? 'text-black' : 'hover:text-black'
+            }`}
+          >
+            why us
+          </button>
+          <button
+            onClick={() => scrollToSection('faqs')}
+            className={`text-left border-b border-black/[0.03] pb-2 cursor-pointer ${
+              activeSection === 'faqs' && currentView === 'landing' ? 'text-black' : 'hover:text-black'
+            }`}
+          >
+            faqs
+          </button>
+          <button
+            onClick={() => { setView('profile'); setIsMenuOpen(false); }}
+            className={`text-left border-b border-black/[0.03] pb-2 cursor-pointer ${
+              currentView === 'profile' ? 'text-black' : 'hover:text-black'
+            }`}
+          >
+            student profile
+          </button>
+          <button
+            onClick={() => { setView('booking'); setIsMenuOpen(false); }}
+            className={`text-left border-b border-black/[0.03] pb-2 cursor-pointer flex items-center justify-between ${
+              currentView === 'booking' ? 'text-black' : 'hover:text-black'
+            }`}
+          >
+            <span>book session</span>
+            <ArrowUpRight className="w-4 h-4 text-brand" />
+          </button>
+        </div>
+      )}
     </header>
   );
 }

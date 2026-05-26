@@ -113,7 +113,7 @@ export default function StudentProfile({ setView }) {
   };
 
   return (
-    <div className="pt-24 pb-20 min-h-screen bg-white text-black font-sans text-left max-w-5xl mx-auto px-6">
+    <div className="pt-24 pb-20 min-h-screen bg-white text-black font-sans text-left max-w-5xl mx-auto px-4 sm:px-6">
       <div className="mb-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div>
           <h2 className="text-3xl font-header font-black text-gray-900 uppercase tracking-wide">
@@ -134,34 +134,36 @@ export default function StudentProfile({ setView }) {
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         
         {/* Left Side: Navigation Tabs */}
-        <div className="lg:col-span-1 flex flex-col gap-2">
-          {[
-            { id: 'personal', label: '1. Personal Details', icon: User },
-            { id: 'school', label: '2. School Details', icon: BookOpen },
-            { id: 'interests', label: '3. Talents & Interests', icon: Award },
-            { id: 'parents', label: '4. Parents / Guardian', icon: Heart },
-            { id: 'batch', label: '5. Batch & Group', icon: ChevronRight }
-          ].map(tab => {
-            const Icon = tab.icon;
-            const isActive = activeTab === tab.id;
-            return (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-3 p-3 rounded-[4px] border text-xs font-bold uppercase tracking-wider transition text-left cursor-pointer ${
-                  isActive 
-                    ? 'bg-brand text-white border-brand' 
-                    : 'bg-white text-gray-500 border-gray-200 hover:border-brand hover:text-brand'
-                }`}
-              >
-                <Icon className="w-4 h-4 shrink-0" />
-                <span>{tab.label}</span>
-              </button>
-            );
-          })}
+        <div className="lg:col-span-1 space-y-6">
+          <div className="flex flex-row overflow-x-auto lg:flex-col gap-2 pb-2 lg:pb-0 scrollbar-none snap-x w-full">
+            {[
+              { id: 'personal', label: '1. Personal Details', icon: User },
+              { id: 'school', label: '2. School Details', icon: BookOpen },
+              { id: 'interests', label: '3. Talents & Interests', icon: Award },
+              { id: 'parents', label: '4. Parents / Guardian', icon: Heart },
+              { id: 'batch', label: '5. Batch & Group', icon: ChevronRight }
+            ].map(tab => {
+              const Icon = tab.icon;
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`flex items-center gap-3 p-3 rounded-[4px] border text-xs font-bold uppercase tracking-wider transition text-left cursor-pointer shrink-0 snap-start ${
+                    isActive 
+                      ? 'bg-brand text-white border-brand' 
+                      : 'bg-white text-gray-500 border-gray-200 hover:border-brand hover:text-brand'
+                  }`}
+                >
+                  <Icon className="w-4 h-4 shrink-0" />
+                  <span>{tab.label}</span>
+                </button>
+              );
+            })}
+          </div>
 
-          <div className="mt-8 p-4 bg-gray-50 border border-gray-200 rounded-[4px] space-y-2">
+          <div className="hidden lg:block p-4 bg-gray-50 border border-gray-200 rounded-[4px] space-y-2">
             <span className="text-[10px] uppercase font-bold tracking-wider text-gray-700 block flex items-center gap-1.5">
               <ShieldAlert className="w-3.5 h-3.5 text-gray-800" /> Privacy Notice
             </span>
@@ -172,7 +174,7 @@ export default function StudentProfile({ setView }) {
         </div>
 
         {/* Right Side: Tab Forms */}
-        <div className="lg:col-span-3 border border-black p-8 bg-white">
+        <div className="lg:col-span-3 border border-black p-5 sm:p-8 bg-white">
           <form onSubmit={handleSave} className="space-y-8 text-xs font-medium">
             
             {/* TAB 1: PERSONAL DETAILS */}

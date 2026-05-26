@@ -41,12 +41,12 @@ const REVIEWS = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-white/40 backdrop-blur-xs border-y border-black/[0.04] text-left relative select-none">
+    <section className="py-16 md:py-24 bg-white/40 backdrop-blur-xs border-y border-black/[0.04] text-left relative select-none">
       
       {/* Background radial glow */}
       <div className="absolute top-1/4 right-1/3 w-[300px] h-[300px] bg-brand/10 rounded-[4px] glow-glow pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 mb-16 space-y-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-16 space-y-4">
         <span className="text-[10px] bg-black text-white px-3.5 py-1 rounded-[4px] uppercase tracking-wider font-extrabold w-fit block">
           success stories
         </span>
@@ -59,11 +59,11 @@ export default function Testimonials() {
       </div>
 
       {/* Static Testimonials Grid */}
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
         {REVIEWS.map((review, idx) => (
           <div 
             key={idx}
-            className="bg-white border border-black/5 rounded-[4px] p-8 shadow-xs flex flex-col justify-between space-y-6 hover:border-brand/40 duration-300 hover:shadow-md transition-all"
+            className="bg-white border border-black/5 rounded-[4px] p-5 sm:p-8 shadow-xs flex flex-col justify-between space-y-6 hover:border-brand/40 duration-300 hover:shadow-md transition-all"
           >
             <div className="space-y-4">
               {/* Rating stars */}

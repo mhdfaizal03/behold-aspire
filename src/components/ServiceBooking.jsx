@@ -166,7 +166,7 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
 
   return (
     <div className="min-h-screen pt-24 pb-20 bg-white text-black text-left font-sans border-b border-gray-150">
-      <div className="max-w-7xl mx-auto px-6 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-16">
         
         {/* Header */}
         <div className="text-center">
@@ -307,7 +307,7 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
         </div>
 
         {/* 3. BOOKING CONSOLE */}
-        <div className="border border-brand p-8 bg-white space-y-6 rounded-[4px]">
+        <div className="border border-brand p-4 sm:p-8 bg-white space-y-6 rounded-[4px]">
           <h2 className="text-xl font-bold uppercase tracking-wide border-b border-gray-100 pb-3">
             Session Booking Console
           </h2>
@@ -462,7 +462,7 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
 
               {/* Right Column: User Details */}
               <div className="lg:col-span-6 space-y-6">
-                <div className="p-6 bg-gray-50 border border-gray-200 rounded-[4px] space-y-4">
+                <div className="p-4 sm:p-6 bg-gray-50 border border-gray-200 rounded-[4px] space-y-4">
                   <h3 className="text-sm font-bold uppercase tracking-wide">4. User Details</h3>
 
                   {isAutofilled && (
@@ -518,7 +518,7 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
                 </div>
 
                 <div className="space-y-4 pt-4 border-t border-gray-150">
-                  <div className="flex justify-between items-center text-[10px] text-gray-500 bg-gray-50 p-3 rounded-[4px] border border-gray-200">
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-[10px] text-gray-500 bg-gray-50 p-3 rounded-[4px] border border-gray-200">
                     <span className="flex items-center gap-1"><CreditCard className="w-3.5 h-3.5 text-gray-400" /> Integrated Payment Link and Login</span>
                     <span className="font-bold text-gray-800">Secure Auth</span>
                   </div>

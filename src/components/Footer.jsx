@@ -16,7 +16,7 @@ export default function Footer({ setView }) {
   };
 
   return (
-    <footer className="bg-black text-zinc-500 text-xs py-20 px-6 border-t border-zinc-900 text-left select-none relative z-10">
+    <footer className="bg-black text-zinc-500 text-xs py-12 md:py-20 px-4 sm:px-6 border-t border-zinc-900 text-left select-none relative z-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-12 pb-16 border-b border-zinc-900">
         
         {/* Brand column */}

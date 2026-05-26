@@ -49,7 +49,7 @@ const OFFERINGS = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-24 md:py-32 px-6 text-black text-left grid-bg relative overflow-hidden">
+    <section id="process" className="py-16 md:py-32 px-4 sm:px-6 text-black text-left grid-bg relative overflow-hidden">
       
       {/* Background glow */}
       <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-brand/10 rounded-full glow-glow pointer-events-none" />
@@ -78,7 +78,7 @@ export default function Process() {
             return (
               <div 
                 key={idx}
-                className="bg-white hover:bg-white/90 border border-black/5 rounded-[4px] p-8 shadow-xs hover:shadow-lg transition-all duration-500 hover:-translate-y-1 flex flex-col justify-between group"
+                className="bg-white hover:bg-white/90 border border-black/5 rounded-[4px] p-5 sm:p-8 shadow-xs hover:shadow-lg transition-all duration-500 hover:-translate-y-1 flex flex-col justify-between group"
               >
                 <div className="space-y-6">
                   <div className="w-10 h-10 rounded-[4px] bg-black/5 text-black flex items-center justify-center transition-colors group-hover:bg-black group-hover:text-brand">
@@ -102,7 +102,7 @@ export default function Process() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12">
           
           {/* Card 1 */}
-          <div className="bg-black text-white rounded-[4px] p-8 md:p-12 space-y-4 shadow-xl flex flex-col justify-between border border-zinc-900">
+          <div className="bg-black text-white rounded-[4px] p-5 sm:p-8 md:p-12 space-y-4 shadow-xl flex flex-col justify-between border border-zinc-900">
             <span className="text-[9px] text-brand font-black uppercase tracking-widest font-mono">
               milestones hit
             </span>
@@ -117,7 +117,7 @@ export default function Process() {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-white border border-black/5 rounded-[4px] p-8 md:p-12 space-y-4 shadow-sm flex flex-col justify-between">
+          <div className="bg-white border border-black/5 rounded-[4px] p-5 sm:p-8 md:p-12 space-y-4 shadow-sm flex flex-col justify-between">
             <span className="text-[9px] text-black/50 font-black uppercase tracking-widest font-mono">
               partnerships active
             </span>
@@ -132,7 +132,7 @@ export default function Process() {
           </div>
 
           {/* Card 3 */}
-          <div className="bg-white border border-black/5 rounded-[4px] p-8 md:p-12 space-y-4 shadow-sm flex flex-col justify-between">
+          <div className="bg-white border border-black/5 rounded-[4px] p-5 sm:p-8 md:p-12 space-y-4 shadow-sm flex flex-col justify-between">
             <span className="text-[9px] text-black/50 font-black uppercase tracking-widest font-mono">
               verified standard
             </span>

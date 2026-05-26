@@ -24,7 +24,7 @@ export default function Faq() {
   };
 
   return (
-    <section id="faqs" className="max-w-4xl mx-auto px-6 py-24 md:py-32 text-black text-left select-none relative">
+    <section id="faqs" className="max-w-4xl mx-auto px-4 sm:px-6 py-16 md:py-32 text-black text-left select-none relative">
       {/* Background glow */}
       <div className="absolute top-1/3 left-1/2 w-[250px] h-[250px] bg-brand/10 rounded-[4px] glow-glow pointer-events-none" />
 
@@ -48,7 +48,7 @@ export default function Faq() {
           return (
             <div 
               key={idx} 
-              className="bg-white border border-black/5 rounded-[4px] p-8 md:p-10 shadow-xs hover:shadow-md transition-all duration-500"
+              className="bg-white border border-black/5 rounded-[4px] p-5 md:p-10 shadow-xs hover:shadow-md transition-all duration-500"
             >
               <button
                 onClick={() => toggleFaq(idx)}

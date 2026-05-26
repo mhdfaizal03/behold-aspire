@@ -9,7 +9,7 @@ export default function Hero({ setView, scrollToSection }) {
 
   return (
     <section
-      className="relative w-full py-20 md:py-32 px-6 text-black text-left grid-bg overflow-hidden flex flex-col items-center justify-center min-h-[90vh] select-none"
+      className="relative w-full py-16 md:py-32 px-4 sm:px-6 text-black text-left grid-bg overflow-hidden flex flex-col items-center justify-center min-h-[90vh] select-none"
     >
       {/* Background Soft Glows */}
       <div className="absolute top-1/4 left-1/3 w-[300px] h-[300px] bg-brand/20 rounded-full glow-glow pointer-events-none" />
@@ -38,29 +38,29 @@ export default function Hero({ setView, scrollToSection }) {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-wrap items-center gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 w-full">
             <button
               onClick={handleBookNowClick}
-              className="px-8 py-4 bg-brand hover:bg-brand-dark hover:scale-[1.02] active:scale-[0.98] text-xs font-black uppercase tracking-widest transition-all duration-300 cursor-pointer rounded-[4px] shadow-md text-black flex items-center gap-2 border border-black/5"
+              className="px-8 py-4 bg-brand hover:bg-brand-dark hover:scale-[1.02] active:scale-[0.98] text-xs font-black uppercase tracking-widest transition-all duration-300 cursor-pointer rounded-[4px] shadow-md text-black flex items-center justify-center gap-2 border border-black/5 w-full sm:w-auto"
             >
               <span>Book a Session</span>
               <ArrowRight className="w-4 h-4" />
             </button>
             <button
               onClick={() => scrollToSection('services')}
-              className="px-8 py-4 bg-white/70 hover:bg-white border border-black/10 hover:border-black text-black hover:scale-[1.02] active:scale-[0.98] text-xs font-black uppercase tracking-widest transition-all duration-300 cursor-pointer rounded-[4px] shadow-xs"
+              className="px-8 py-4 bg-white/70 hover:bg-white border border-black/10 hover:border-black text-black hover:scale-[1.02] active:scale-[0.98] text-xs font-black uppercase tracking-widest transition-all duration-300 cursor-pointer rounded-[4px] shadow-xs w-full sm:w-auto text-center"
             >
               Explore Services
             </button>
           </div>
 
           {/* Stats quick view */}
-          <div className="grid grid-cols-3 gap-6 pt-8 border-t border-black/[0.05] max-w-md">
+          <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-8 border-t border-black/[0.05] max-w-md">
             <div>
               <p className="text-2xl font-black text-black">5k+</p>
               <p className="text-[9px] font-bold uppercase tracking-wider text-black/45">Guided</p>
             </div>
-            <div className="border-x border-black/[0.05] px-6">
+            <div className="border-x border-black/[0.05] px-3 sm:px-6">
               <p className="text-2xl font-black text-black">100+</p>
               <p className="text-[9px] font-bold uppercase tracking-wider text-black/45">Schools</p>
             </div>

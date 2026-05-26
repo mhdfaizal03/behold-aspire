@@ -131,7 +131,7 @@ export default function Services({ setView, onBookTherapist }) {
   };
 
   return (
-    <section id="services" className="max-w-7xl mx-auto px-6 py-24 md:py-32 text-black text-left relative">
+    <section id="services" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-32 text-black text-left relative">
       {/* Background radial soft light */}
       <div className="absolute top-1/2 left-1/4 w-[350px] h-[350px] bg-brand/10 rounded-[4px] glow-glow pointer-events-none" />
 
@@ -154,7 +154,7 @@ export default function Services({ setView, onBookTherapist }) {
         {/* SERVICE 1: APTITUDE TEST CARD */}
         <div 
           id="card-aptitude" 
-          className="card-luxury card-luxury-hover p-8 md:p-14 flex flex-col justify-between space-y-8 select-none border border-black/5"
+          className="card-luxury card-luxury-hover p-5 sm:p-8 md:p-14 flex flex-col justify-between space-y-8 select-none border border-black/5"
         >
           <div className="space-y-6">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
@@ -182,16 +182,16 @@ export default function Services({ setView, onBookTherapist }) {
 
           <div className="pt-6 border-t border-black/[0.05]">
             {!showAptitudeForm ? (
-              <div className="flex gap-4 flex-wrap">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
                 <button 
                   onClick={() => setView('test')}
-                  className="px-6 py-3.5 bg-black hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-widest rounded-[4px] transition cursor-pointer shadow-sm"
+                  className="px-6 py-3.5 bg-black hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-widest rounded-[4px] transition cursor-pointer shadow-sm w-full sm:w-auto text-center"
                 >
                   Take Aptitude Test
                 </button>
                 <button 
                   onClick={() => setShowAptitudeForm(true)}
-                  className="px-6 py-3.5 bg-brand hover:bg-brand-dark text-black font-bold text-xs uppercase tracking-widest rounded-[4px] transition cursor-pointer shadow-sm border border-black/5"
+                  className="px-6 py-3.5 bg-brand hover:bg-brand-dark text-black font-bold text-xs uppercase tracking-widest rounded-[4px] transition cursor-pointer shadow-sm border border-black/5 w-full sm:w-auto text-center"
                 >
                   Book Aptitude (CDAC Registration)
                 </button>
@@ -426,10 +426,10 @@ export default function Services({ setView, onBookTherapist }) {
 
                   </div>
 
-                  <div className="pt-6 border-t border-black/[0.05] flex items-center gap-4">
+                  <div className="pt-6 border-t border-black/[0.05] flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                     <button 
                       type="submit"
-                      className="px-8 py-4 bg-black hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-widest rounded-[4px] transition cursor-pointer inline-flex items-center gap-2 shadow-md"
+                      className="px-8 py-4 bg-black hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-widest rounded-[4px] transition cursor-pointer inline-flex items-center justify-center gap-2 shadow-md w-full sm:w-auto"
                     >
                       <span>Submit & Select Counselor</span>
                       <ArrowUpRight className="w-4 h-4 text-brand" />
@@ -450,7 +450,7 @@ export default function Services({ setView, onBookTherapist }) {
           {/* SERVICE 2: CAREER COUNSELLING */}
           <div 
             id="card-career" 
-            className="col-span-12 md:col-span-6 card-luxury card-luxury-hover p-8 md:p-12 flex flex-col justify-between space-y-8 select-none border border-black/5 min-h-[360px]"
+            className="col-span-12 md:col-span-6 card-luxury card-luxury-hover p-5 sm:p-8 md:p-12 flex flex-col justify-between space-y-8 select-none border border-black/5 min-h-[360px]"
           >
             <div className="space-y-4">
               <div className="flex justify-between items-start">
@@ -478,7 +478,7 @@ export default function Services({ setView, onBookTherapist }) {
                 }
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="px-6 py-3 bg-white/80 hover:bg-black hover:text-white border border-black/10 rounded-[4px] text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer self-start shadow-xs hover:shadow-md"
+              className="px-6 py-3 bg-white/80 hover:bg-black hover:text-white border border-black/10 rounded-[4px] text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer w-full sm:w-auto text-center shadow-xs hover:shadow-md"
             >
               Configure career session
             </button>
@@ -487,7 +487,7 @@ export default function Services({ setView, onBookTherapist }) {
           {/* SERVICE 3: PERSONAL COUNSELLING */}
           <div 
             id="card-mental" 
-            className="col-span-12 md:col-span-6 card-luxury card-luxury-hover p-8 md:p-12 flex flex-col justify-between space-y-8 select-none border border-black/5 min-h-[360px]"
+            className="col-span-12 md:col-span-6 card-luxury card-luxury-hover p-5 sm:p-8 md:p-12 flex flex-col justify-between space-y-8 select-none border border-black/5 min-h-[360px]"
           >
             <div className="space-y-4">
               <div className="flex justify-between items-start">
@@ -515,7 +515,7 @@ export default function Services({ setView, onBookTherapist }) {
                 }
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="px-6 py-3 bg-white/80 hover:bg-black hover:text-white border border-black/10 rounded-[4px] text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer self-start shadow-xs hover:shadow-md"
+              className="px-6 py-3 bg-white/80 hover:bg-black hover:text-white border border-black/10 rounded-[4px] text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer w-full sm:w-auto text-center shadow-xs hover:shadow-md"
             >
               Configure counselling session
             </button>

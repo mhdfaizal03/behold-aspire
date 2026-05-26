@@ -374,7 +374,7 @@ export default function AptitudeTest({ onFinishTest }) {
 
   return (
     <div className="pt-32 pb-20 min-h-screen bg-[#f3f3f3] text-black relative overflow-hidden font-sans border-b border-black/[0.03] text-left">
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
 
         {!testFinished ? (
           /* Quiz Interface Card */

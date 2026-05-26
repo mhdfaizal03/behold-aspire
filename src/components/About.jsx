@@ -26,7 +26,7 @@ export default function About({ setView }) {
   const [activeTab, setActiveTab] = useState('mentorship');
 
   return (
-    <section id="about" className="py-24 md:py-32 px-6 text-black text-left grid-bg relative overflow-hidden">
+    <section id="about" className="py-24 md:py-32 px-4 sm:px-6 text-black text-left grid-bg relative overflow-hidden">
       
       {/* Glow Effects */}
       <div className="absolute bottom-10 left-10 w-[300px] h-[300px] bg-brand/10 rounded-full glow-glow pointer-events-none" />
@@ -85,7 +85,7 @@ export default function About({ setView }) {
                 setView('booking');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="px-6 py-3.5 bg-black hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-widest rounded-[4px] transition-all duration-200 cursor-pointer shadow-sm"
+              className="px-6 py-3.5 bg-black hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-widest rounded-[4px] transition-all duration-200 cursor-pointer shadow-sm w-full sm:w-auto text-center"
             >
               Get Started with Behold
             </button>

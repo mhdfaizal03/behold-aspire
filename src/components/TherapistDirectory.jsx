@@ -123,7 +123,7 @@ export default function TherapistDirectory({ onBookTherapist }) {
   });
 
   return (
-    <section className="bg-white text-black py-20 px-6 border-t border-gray-150 select-none text-left max-w-7xl mx-auto">
+    <section className="bg-white text-black py-20 px-4 sm:px-6 border-t border-gray-150 select-none text-left max-w-7xl mx-auto">
       
       {/* TRUST REVIEW STATUS CARDS */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
@@ -174,7 +174,7 @@ export default function TherapistDirectory({ onBookTherapist }) {
       </div>
 
       {/* FILTER SEARCH PANEL */}
-      <div className="flex flex-col lg:flex-row gap-4 items-center justify-between mb-10 bg-gray-50 p-4 border border-gray-200">
+      <div className="flex flex-col lg:flex-row gap-4 items-stretch lg:items-center justify-between mb-10 bg-gray-50 p-4 border border-gray-200">
         
         {/* Search & Language Select */}
         <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto items-stretch sm:items-center">
@@ -205,7 +205,7 @@ export default function TherapistDirectory({ onBookTherapist }) {
         </div>
 
         {/* Specialization Category Tabs */}
-        <div className="flex flex-wrap gap-2 w-full lg:w-auto justify-start lg:justify-end">
+        <div className="flex flex-wrap gap-2 w-full lg:w-auto justify-center sm:justify-start lg:justify-end">
           {CATEGORIES.map(category => (
             <button
               key={category}
@@ -276,18 +276,18 @@ export default function TherapistDirectory({ onBookTherapist }) {
                     <p className="text-[10px] font-bold text-gray-900">{therapist.availability.replace('Next available in', '').replace('Next available Today at', '')}</p>
                   </div>
                   
-                  <div className="flex gap-2 shrink-0">
+                  <div className="flex w-full sm:w-auto gap-2 shrink-0">
                     <button
                       type="button"
                       onClick={() => setSelectedTherapist(therapist)}
-                      className="border border-brand hover:bg-brand/5 text-brand px-3.5 py-2 rounded-[4px] text-[10px] font-bold uppercase tracking-wider transition cursor-pointer"
+                      className="border border-brand hover:bg-brand/5 text-brand px-3.5 py-2 rounded-[4px] text-[10px] font-bold uppercase tracking-wider transition cursor-pointer flex-1 sm:flex-none text-center"
                     >
                       View Profile
                     </button>
                     <button
                       type="button"
                       onClick={() => onBookTherapist(therapist.id)}
-                      className={`px-4 py-2 text-[10px] font-extrabold uppercase tracking-wider transition cursor-pointer rounded-[4px] shadow-xs ${
+                      className={`px-4 py-2 text-[10px] font-extrabold uppercase tracking-wider transition cursor-pointer rounded-[4px] shadow-xs flex-1 sm:flex-none text-center ${
                         therapist.action === 'FOLLOW UP ONLY'
                           ? 'bg-gray-600 hover:bg-gray-700 text-white'
                           : 'bg-brand hover:bg-brand-dark text-white border border-brand/50'

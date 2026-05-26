@@ -75,7 +75,7 @@ export default function Inquiry({ testProfile }) {
     <div className="text-black text-left">
       
       {/* 1. METRICS SECTION */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-t border-gray-100 grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-20 border-t border-gray-100 grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5">
           <h2 className="text-3xl font-normal tracking-tight font-header uppercase">
             Guidance Supported <br /> by Numbers.
@@ -107,12 +107,12 @@ export default function Inquiry({ testProfile }) {
       </section>
 
       {/* 2. CASE STUDIES / TESTIMONIALS */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-t border-gray-100">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20 border-t border-gray-100">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <h2 className="text-2xl md:text-3xl font-normal tracking-tight max-w-xl leading-snug font-header uppercase">
             Families & Students Use Our Guidance to Map Academic Streams, Overcome Anxieties and Drive Educational Development.
           </h2>
-          <button className="bg-brand text-white px-5 py-2.5 text-xs font-bold uppercase tracking-wider rounded-[4px] whitespace-nowrap hover:bg-brand-dark transition duration-200 cursor-pointer shadow-sm">
+          <button className="bg-brand text-white px-5 py-2.5 text-xs font-bold uppercase tracking-wider rounded-[4px] hover:bg-brand-dark transition duration-200 cursor-pointer shadow-sm w-full md:w-auto text-center">
             All Stories (98)
           </button>
         </div>
@@ -121,7 +121,7 @@ export default function Inquiry({ testProfile }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 items-start">
           
           {/* Card 1 */}
-          <div className="lg:col-span-7 bg-gray-50 rounded-[4px] p-6 flex flex-col md:flex-row gap-6 items-center">
+          <div className="lg:col-span-7 bg-gray-50 rounded-[4px] p-5 sm:p-6 flex flex-col md:flex-row gap-6 items-center">
             <div className="w-full md:w-1/2 aspect-square rounded-[4px] overflow-hidden bg-gray-200 flex-shrink-0">
               <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=400&q=80" alt="Student Anjana" className="w-full h-full object-cover" />
             </div>
@@ -137,7 +137,7 @@ export default function Inquiry({ testProfile }) {
           </div>
 
           {/* Card 2 */}
-          <div className="lg:col-span-5 bg-gray-50 rounded-[4px] p-6 space-y-6">
+          <div className="lg:col-span-5 bg-gray-50 rounded-[4px] p-5 sm:p-6 space-y-6">
             <div className="w-full aspect-[16/10] rounded-[4px] overflow-hidden bg-gray-200">
               <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80" alt="Consultation desk" className="w-full h-full object-cover" />
             </div>
@@ -153,7 +153,7 @@ export default function Inquiry({ testProfile }) {
           </div>
 
           {/* Card 3 */}
-          <div className="lg:col-span-5 lg:col-start-8 bg-gray-50 rounded-[4px] p-6 space-y-6">
+          <div className="lg:col-span-5 lg:col-start-8 bg-gray-50 rounded-[4px] p-5 sm:p-6 space-y-6">
             <div className="w-full aspect-square rounded-[4px] overflow-hidden bg-gray-200">
               <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" alt="Psychology consultant" className="w-full h-full object-cover" />
             </div>
@@ -172,9 +172,9 @@ export default function Inquiry({ testProfile }) {
       </section>
 
       {/* 3. CALL TO ACTION BLOCK WITH INQUIRY FORM */}
-      <section id="inquiry" className="max-w-7xl mx-auto px-6 py-12">
+      <section id="inquiry" className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
         <div className="bg-gray-50 rounded-[4px] overflow-hidden grid grid-cols-1 md:grid-cols-2 items-center border border-gray-100 shadow-sm">
-          <div className="p-8 md:p-12 space-y-6">
+          <div className="p-5 md:p-12 space-y-6">
             <h2 className="text-3xl font-normal tracking-tight text-gray-900 font-header uppercase">Consultation Request</h2>
             <p className="text-gray-500 font-light text-sm max-w-sm">
               Submit your request to align parents, students, and coordinators for assessments and counselling sessions.

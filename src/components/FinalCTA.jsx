@@ -16,9 +16,9 @@ export default function FinalCTA({ setView }) {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-12 select-none text-left">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-12 select-none text-left">
       <div 
-        className="bg-black text-white rounded-[4px] p-8 md:p-24 relative overflow-hidden shadow-2xl border border-zinc-900"
+        className="bg-black text-white rounded-[4px] p-6 sm:p-12 md:p-24 relative overflow-hidden shadow-2xl border border-zinc-900"
       >
         {/* Futuristic glow elements */}
         <div className="absolute -top-1/4 -right-1/4 w-[500px] h-[500px] bg-brand/20 rounded-[4px] glow-glow pointer-events-none" style={{ filter: 'blur(100px)' }} />
@@ -41,17 +41,17 @@ export default function FinalCTA({ setView }) {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4 w-full">
             <button
               onClick={handleGetStarted}
-              className="px-8 py-4 bg-brand hover:bg-brand-dark text-black font-bold text-xs uppercase tracking-widest rounded-[4px] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center gap-2 border border-black/5"
+              className="px-8 py-4 bg-brand hover:bg-brand-dark text-black font-bold text-xs uppercase tracking-widest rounded-[4px] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2 border border-black/5 w-full sm:w-auto"
             >
               <span>Get Started</span>
               <ArrowRight className="w-4 h-4" />
             </button>
             <button
               onClick={handleContact}
-              className="px-8 py-4 bg-transparent border border-white/20 hover:border-white text-white hover:scale-[1.02] active:scale-[0.98] text-xs font-bold uppercase tracking-widest rounded-[4px] transition-all duration-300 cursor-pointer"
+              className="px-8 py-4 bg-transparent border border-white/20 hover:border-white text-white hover:scale-[1.02] active:scale-[0.98] text-xs font-bold uppercase tracking-widest rounded-[4px] transition-all duration-300 cursor-pointer w-full sm:w-auto text-center"
             >
               Contact BEHOLD
             </button>

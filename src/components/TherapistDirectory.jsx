@@ -130,7 +130,7 @@ export default function TherapistDirectory({ onBookTherapist }) {
         
         {/* Status Card 1 */}
         <div className="p-5 border border-brand bg-brand/5 flex items-center gap-4 hover:shadow-md transition-all duration-300">
-          <div className="w-10 h-10 rounded-full bg-brand flex items-center justify-center text-white">
+          <div className="w-10 h-10 rounded-[4px] bg-brand flex items-center justify-center text-white">
             <CheckCircle className="w-5 h-5" />
           </div>
           <div>
@@ -141,7 +141,7 @@ export default function TherapistDirectory({ onBookTherapist }) {
 
         {/* Status Card 2 */}
         <div className="p-5 border border-brand bg-brand/5 flex items-center gap-4 hover:shadow-md transition-all duration-300">
-          <div className="w-10 h-10 rounded-full bg-brand flex items-center justify-center text-white">
+          <div className="w-10 h-10 rounded-[4px] bg-brand flex items-center justify-center text-white">
             <Star className="w-5 h-5 fill-white text-brand" />
           </div>
           <div>
@@ -152,7 +152,7 @@ export default function TherapistDirectory({ onBookTherapist }) {
 
         {/* Status Card 3 */}
         <div className="p-5 border border-brand bg-brand/5 flex items-center gap-4 hover:shadow-md transition-all duration-300">
-          <div className="w-10 h-10 rounded-full bg-brand flex items-center justify-center text-white">
+          <div className="w-10 h-10 rounded-[4px] bg-brand flex items-center justify-center text-white">
             <Shield className="w-5 h-5" />
           </div>
           <div>
@@ -184,12 +184,12 @@ export default function TherapistDirectory({ onBookTherapist }) {
               placeholder="Search by therapist name..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2.5 bg-white border border-gray-300 text-xs text-gray-950 rounded-md outline-none focus:border-brand transition"
+              className="w-full pl-9 pr-4 py-2.5 bg-white border border-gray-300 text-xs text-gray-950 rounded-[4px] outline-none focus:border-brand transition"
             />
             <Search className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
           </div>
 
-          <div className="flex items-center gap-2 bg-white px-3 py-2 border border-gray-300 rounded-md">
+          <div className="flex items-center gap-2 bg-white px-3 py-2 border border-gray-300 rounded-[4px]">
             <Languages className="w-4 h-4 text-brand" />
             <select
               value={selectedLanguage}
@@ -210,7 +210,7 @@ export default function TherapistDirectory({ onBookTherapist }) {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 text-[10px] font-bold uppercase tracking-wider rounded-md transition duration-200 cursor-pointer border ${
+              className={`px-4 py-2 text-[10px] font-bold uppercase tracking-wider rounded-[4px] transition duration-200 cursor-pointer border ${
                 activeCategory === category
                   ? 'bg-brand text-white border-brand shadow-xs'
                   : 'bg-white text-gray-500 border-gray-200 hover:border-brand hover:text-brand'
@@ -230,7 +230,7 @@ export default function TherapistDirectory({ onBookTherapist }) {
             return (
               <div 
                 key={therapist.name}
-                className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-brand/40 transition-all duration-300 flex flex-col justify-between"
+                className="bg-white border border-gray-200 rounded-[4px] overflow-hidden hover:shadow-lg hover:border-brand/40 transition-all duration-300 flex flex-col justify-between"
               >
                 
                 {/* 1. Header with soft brand teal accent */}
@@ -239,7 +239,7 @@ export default function TherapistDirectory({ onBookTherapist }) {
                     <h3 className="font-bold text-gray-900 text-base leading-tight">{therapist.name}</h3>
                     <p className="text-[10px] text-gray-500 uppercase tracking-wide">{therapist.designation}</p>
                   </div>
-                  <div className="w-16 h-16 rounded-full overflow-hidden border border-white bg-white shrink-0 shadow-sm">
+                  <div className="w-16 h-16 rounded-[4px] overflow-hidden border border-white bg-white shrink-0 shadow-sm">
                     <img src={therapist.image} alt={therapist.name} className="w-full h-full object-cover" />
                   </div>
                 </div>
@@ -280,14 +280,14 @@ export default function TherapistDirectory({ onBookTherapist }) {
                     <button
                       type="button"
                       onClick={() => setSelectedTherapist(therapist)}
-                      className="border border-brand hover:bg-brand/5 text-brand px-3.5 py-2 rounded-md text-[10px] font-bold uppercase tracking-wider transition cursor-pointer"
+                      className="border border-brand hover:bg-brand/5 text-brand px-3.5 py-2 rounded-[4px] text-[10px] font-bold uppercase tracking-wider transition cursor-pointer"
                     >
                       View Profile
                     </button>
                     <button
                       type="button"
                       onClick={() => onBookTherapist(therapist.id)}
-                      className={`px-4 py-2 text-[10px] font-extrabold uppercase tracking-wider transition cursor-pointer rounded-md shadow-xs ${
+                      className={`px-4 py-2 text-[10px] font-extrabold uppercase tracking-wider transition cursor-pointer rounded-[4px] shadow-xs ${
                         therapist.action === 'FOLLOW UP ONLY'
                           ? 'bg-gray-600 hover:bg-gray-700 text-white'
                           : 'bg-brand hover:bg-brand-dark text-white border border-brand/50'
@@ -310,7 +310,7 @@ export default function TherapistDirectory({ onBookTherapist }) {
 
       {/* VIEW MORE THERAPIST BUTTON */}
       <div className="mt-12 text-center">
-        <button className="px-6 py-2.5 bg-black hover:bg-brand text-white font-bold text-[10px] uppercase tracking-widest rounded-full transition cursor-pointer">
+        <button className="px-6 py-2.5 bg-black hover:bg-brand text-white font-bold text-[10px] uppercase tracking-widest rounded-[4px] transition cursor-pointer">
           View more therapist
         </button>
       </div>
@@ -318,7 +318,7 @@ export default function TherapistDirectory({ onBookTherapist }) {
       {/* DETAILED PROFILE MODAL */}
       {selectedTherapist && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-xs flex items-center justify-center z-50 p-6 animate-in fade-in duration-200">
-          <div className="bg-white border border-brand max-w-lg w-full p-8 rounded-xl shadow-2xl relative space-y-6 text-left">
+          <div className="bg-white border border-brand max-w-lg w-full p-8 rounded-[4px] shadow-2xl relative space-y-6 text-left">
             <button
               onClick={() => setSelectedTherapist(null)}
               className="absolute right-4 top-4 text-gray-400 hover:text-black transition cursor-pointer"
@@ -327,7 +327,7 @@ export default function TherapistDirectory({ onBookTherapist }) {
             </button>
 
             <div className="flex gap-4 items-center">
-              <div className="w-16 h-16 rounded-full overflow-hidden border border-gray-200 bg-gray-50">
+              <div className="w-16 h-16 rounded-[4px] overflow-hidden border border-gray-200 bg-gray-50">
                 <img src={selectedTherapist.image} alt={selectedTherapist.name} className="w-full h-full object-cover" />
               </div>
               <div>
@@ -366,14 +366,14 @@ export default function TherapistDirectory({ onBookTherapist }) {
                   onBookTherapist(selectedTherapist.id);
                   setSelectedTherapist(null);
                 }}
-                className="flex-1 py-3 bg-brand hover:bg-brand-dark text-white font-bold text-xs uppercase tracking-wider rounded-md text-center transition cursor-pointer shadow-sm"
+                className="flex-1 py-3 bg-brand hover:bg-brand-dark text-white font-bold text-xs uppercase tracking-wider rounded-[4px] text-center transition cursor-pointer shadow-sm"
               >
                 Book Session Now
               </button>
               <button
                 type="button"
                 onClick={() => setSelectedTherapist(null)}
-                className="flex-1 py-3 bg-white border border-gray-300 text-gray-700 hover:border-black font-bold text-xs uppercase tracking-wider rounded-md text-center transition cursor-pointer"
+                className="flex-1 py-3 bg-white border border-gray-300 text-gray-700 hover:border-black font-bold text-xs uppercase tracking-wider rounded-[4px] text-center transition cursor-pointer"
               >
                 Close Profile
               </button>

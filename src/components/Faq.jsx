@@ -26,11 +26,11 @@ export default function Faq() {
   return (
     <section id="faqs" className="max-w-4xl mx-auto px-6 py-24 md:py-32 text-black text-left select-none relative">
       {/* Background glow */}
-      <div className="absolute top-1/3 left-1/2 w-[250px] h-[250px] bg-brand/10 rounded-full glow-glow pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 w-[250px] h-[250px] bg-brand/10 rounded-[4px] glow-glow pointer-events-none" />
 
       {/* Section Header */}
       <div className="mb-16 space-y-4 text-center">
-        <span className="text-[10px] bg-black text-white px-3.5 py-1 rounded-full uppercase tracking-wider font-extrabold w-fit mx-auto block">
+        <span className="text-[10px] bg-black text-white px-3.5 py-1 rounded-[4px] uppercase tracking-wider font-extrabold w-fit mx-auto block">
           clarity desk
         </span>
         <h2 className="text-4xl md:text-5xl font-header font-black tracking-tight text-gray-900 leading-tight uppercase">
@@ -48,7 +48,7 @@ export default function Faq() {
           return (
             <div 
               key={idx} 
-              className="bg-white border border-black/5 rounded-[40px] p-8 md:p-10 shadow-xs hover:shadow-md transition-all duration-500"
+              className="bg-white border border-black/5 rounded-[4px] p-8 md:p-10 shadow-xs hover:shadow-md transition-all duration-500"
             >
               <button
                 onClick={() => toggleFaq(idx)}
@@ -56,7 +56,7 @@ export default function Faq() {
                 aria-expanded={isOpen}
               >
                 <div className="flex items-center gap-4">
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors ${
+                  <div className={`w-8 h-8 rounded-[4px] flex items-center justify-center shrink-0 transition-colors ${
                     isOpen ? 'bg-black text-brand' : 'bg-black/5 text-black'
                   }`}>
                     <HelpCircle className="w-4 h-4" />

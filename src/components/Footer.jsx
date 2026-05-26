@@ -71,11 +71,11 @@ export default function Footer({ setView }) {
             <input 
               type="email" 
               placeholder="Enter your email" 
-              className="w-full bg-zinc-950 border border-zinc-800 rounded-full py-3.5 pl-5 pr-12 text-xs outline-none focus:border-brand transition text-zinc-300 font-sans"
+              className="w-full bg-zinc-950 border border-zinc-800 rounded-[4px] py-3.5 pl-5 pr-12 text-xs outline-none focus:border-brand transition text-zinc-300 font-sans"
             />
             <button 
               type="submit" 
-              className="absolute right-1.5 bottom-1.5 w-9 h-9 rounded-full bg-brand text-black hover:bg-brand-dark flex items-center justify-center transition cursor-pointer"
+              className="absolute right-1.5 bottom-1.5 w-9 h-9 rounded-[4px] bg-brand text-black hover:bg-brand-dark flex items-center justify-center transition cursor-pointer"
             >
               <Send className="w-3.5 h-3.5" />
             </button>

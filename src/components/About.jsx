@@ -37,7 +37,7 @@ export default function About({ setView }) {
         <div className="lg:col-span-6 space-y-8">
           
           <div className="space-y-4">
-            <span className="text-[10px] bg-black text-white px-3.5 py-1 rounded-full uppercase tracking-wider font-extrabold w-fit block">
+            <span className="text-[10px] bg-black text-white px-3.5 py-1 rounded-[4px] uppercase tracking-wider font-extrabold w-fit block">
               our core purpose
             </span>
             <h2 className="text-4xl md:text-5xl font-header font-black tracking-tight text-gray-900 leading-[1.1] uppercase">
@@ -57,14 +57,14 @@ export default function About({ setView }) {
                 <div 
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`p-6 border transition-all duration-300 cursor-pointer text-left rounded-[24px] ${
+                  className={`p-6 border transition-all duration-300 cursor-pointer text-left rounded-[4px] ${
                     isActive 
                       ? 'bg-white border-black/10 shadow-lg scale-[1.01]' 
                       : 'bg-transparent border-transparent hover:border-black/[0.04] hover:bg-white/40'
                   }`}
                 >
                   <div className="flex items-start gap-4">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors ${
+                    <div className={`w-10 h-10 rounded-[4px] flex items-center justify-center shrink-0 transition-colors ${
                       isActive ? 'bg-black text-brand' : 'bg-black/5 text-black'
                     }`}>
                       <Icon className="w-4 h-4" />
@@ -85,7 +85,7 @@ export default function About({ setView }) {
                 setView('booking');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="px-6 py-3.5 bg-black hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-widest rounded-full transition-all duration-200 cursor-pointer shadow-sm"
+              className="px-6 py-3.5 bg-black hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-widest rounded-[4px] transition-all duration-200 cursor-pointer shadow-sm"
             >
               Get Started with Behold
             </button>
@@ -97,7 +97,7 @@ export default function About({ setView }) {
         <div className="lg:col-span-6 relative flex items-center justify-center">
           
           {/* Main Visual Container */}
-          <div className="w-full aspect-square md:aspect-[4/3] rounded-[40px] overflow-hidden border border-black/5 shadow-2xl relative bg-zinc-200">
+          <div className="w-full aspect-square md:aspect-[4/3] rounded-[4px] overflow-hidden border border-black/5 shadow-2xl relative bg-zinc-200">
             <img 
               src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" 
               alt="Emotional student representation" 
@@ -108,8 +108,8 @@ export default function About({ setView }) {
           </div>
 
           {/* Floating UI Achievement */}
-          <div className="absolute bottom-8 -left-8 bg-white/95 backdrop-blur-md border border-black/[0.04] p-5 rounded-3xl shadow-xl flex items-center gap-3.5 max-w-[240px] z-20 pointer-events-none">
-            <div className="w-9 h-9 rounded-full bg-brand flex items-center justify-center text-black shadow-inner shrink-0">
+          <div className="absolute bottom-8 -left-8 bg-white/95 backdrop-blur-md border border-black/[0.04] p-5 rounded-[4px] shadow-xl hidden sm:flex items-center gap-3.5 max-w-[240px] z-20 pointer-events-none">
+            <div className="w-9 h-9 rounded-[4px] bg-brand flex items-center justify-center text-black shadow-inner shrink-0">
               <Award className="w-4 h-4" />
             </div>
             <div>
@@ -119,7 +119,7 @@ export default function About({ setView }) {
           </div>
 
           {/* Floating UI Trusted */}
-          <div className="absolute top-1/3 -right-8 bg-white/95 backdrop-blur-md border border-black/[0.04] p-4 rounded-3xl shadow-xl flex items-center gap-3.5 max-w-[200px] z-20 pointer-events-none">
+          <div className="absolute top-1/3 -right-8 bg-white/95 backdrop-blur-md border border-black/[0.04] p-4 rounded-[4px] shadow-xl hidden sm:flex items-center gap-3.5 max-w-[200px] z-20 pointer-events-none">
             <ShieldCheck className="w-4.5 h-4.5 text-emerald-600 shrink-0" />
             <div>
               <p className="text-[10px] font-extrabold uppercase tracking-wide text-black">Safe Environment</p>

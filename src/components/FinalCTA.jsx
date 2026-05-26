@@ -18,15 +18,15 @@ export default function FinalCTA({ setView }) {
   return (
     <section className="max-w-7xl mx-auto px-6 py-12 select-none text-left">
       <div 
-        className="bg-black text-white rounded-[40px] p-8 md:p-24 relative overflow-hidden shadow-2xl border border-zinc-900"
+        className="bg-black text-white rounded-[4px] p-8 md:p-24 relative overflow-hidden shadow-2xl border border-zinc-900"
       >
         {/* Futuristic glow elements */}
-        <div className="absolute -top-1/4 -right-1/4 w-[500px] h-[500px] bg-brand/20 rounded-full glow-glow pointer-events-none" style={{ filter: 'blur(100px)' }} />
-        <div className="absolute -bottom-1/3 -left-1/4 w-[450px] h-[450px] bg-brand/10 rounded-full glow-glow pointer-events-none" style={{ filter: 'blur(90px)' }} />
+        <div className="absolute -top-1/4 -right-1/4 w-[500px] h-[500px] bg-brand/20 rounded-[4px] glow-glow pointer-events-none" style={{ filter: 'blur(100px)' }} />
+        <div className="absolute -bottom-1/3 -left-1/4 w-[450px] h-[450px] bg-brand/10 rounded-[4px] glow-glow pointer-events-none" style={{ filter: 'blur(90px)' }} />
 
         <div className="max-w-3xl space-y-8 relative z-10">
           
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-xs border border-white/[0.08] rounded-full text-[10px] font-extrabold uppercase tracking-widest text-brand">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-xs border border-white/[0.08] rounded-[4px] text-[10px] font-extrabold uppercase tracking-widest text-brand">
             <Sparkles className="w-3.5 h-3.5" />
             <span>start today</span>
           </div>
@@ -44,14 +44,14 @@ export default function FinalCTA({ setView }) {
           <div className="flex flex-wrap items-center gap-4 pt-4">
             <button
               onClick={handleGetStarted}
-              className="px-8 py-4 bg-brand hover:bg-brand-dark text-black font-bold text-xs uppercase tracking-widest rounded-full transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center gap-2 border border-black/5"
+              className="px-8 py-4 bg-brand hover:bg-brand-dark text-black font-bold text-xs uppercase tracking-widest rounded-[4px] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center gap-2 border border-black/5"
             >
               <span>Get Started</span>
               <ArrowRight className="w-4 h-4" />
             </button>
             <button
               onClick={handleContact}
-              className="px-8 py-4 bg-transparent border border-white/20 hover:border-white text-white hover:scale-[1.02] active:scale-[0.98] text-xs font-bold uppercase tracking-widest rounded-full transition-all duration-300 cursor-pointer"
+              className="px-8 py-4 bg-transparent border border-white/20 hover:border-white text-white hover:scale-[1.02] active:scale-[0.98] text-xs font-bold uppercase tracking-widest rounded-[4px] transition-all duration-300 cursor-pointer"
             >
               Contact BEHOLD
             </button>

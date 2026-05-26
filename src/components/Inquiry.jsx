@@ -112,7 +112,7 @@ export default function Inquiry({ testProfile }) {
           <h2 className="text-2xl md:text-3xl font-normal tracking-tight max-w-xl leading-snug font-header uppercase">
             Families & Students Use Our Guidance to Map Academic Streams, Overcome Anxieties and Drive Educational Development.
           </h2>
-          <button className="bg-brand text-white px-5 py-2.5 text-xs font-bold uppercase tracking-wider rounded-md whitespace-nowrap hover:bg-brand-dark transition duration-200 cursor-pointer shadow-sm">
+          <button className="bg-brand text-white px-5 py-2.5 text-xs font-bold uppercase tracking-wider rounded-[4px] whitespace-nowrap hover:bg-brand-dark transition duration-200 cursor-pointer shadow-sm">
             All Stories (98)
           </button>
         </div>
@@ -121,8 +121,8 @@ export default function Inquiry({ testProfile }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 items-start">
           
           {/* Card 1 */}
-          <div className="lg:col-span-7 bg-gray-50 rounded-2xl p-6 flex flex-col md:flex-row gap-6 items-center">
-            <div className="w-full md:w-1/2 aspect-square rounded-xl overflow-hidden bg-gray-200 flex-shrink-0">
+          <div className="lg:col-span-7 bg-gray-50 rounded-[4px] p-6 flex flex-col md:flex-row gap-6 items-center">
+            <div className="w-full md:w-1/2 aspect-square rounded-[4px] overflow-hidden bg-gray-200 flex-shrink-0">
               <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=400&q=80" alt="Student Anjana" className="w-full h-full object-cover" />
             </div>
             <div className="space-y-4">
@@ -137,8 +137,8 @@ export default function Inquiry({ testProfile }) {
           </div>
 
           {/* Card 2 */}
-          <div className="lg:col-span-5 bg-gray-50 rounded-2xl p-6 space-y-6">
-            <div className="w-full aspect-[16/10] rounded-xl overflow-hidden bg-gray-200">
+          <div className="lg:col-span-5 bg-gray-50 rounded-[4px] p-6 space-y-6">
+            <div className="w-full aspect-[16/10] rounded-[4px] overflow-hidden bg-gray-200">
               <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80" alt="Consultation desk" className="w-full h-full object-cover" />
             </div>
             <div className="space-y-4">
@@ -153,8 +153,8 @@ export default function Inquiry({ testProfile }) {
           </div>
 
           {/* Card 3 */}
-          <div className="lg:col-span-5 lg:col-start-8 bg-gray-50 rounded-2xl p-6 space-y-6">
-            <div className="w-full aspect-square rounded-xl overflow-hidden bg-gray-200">
+          <div className="lg:col-span-5 lg:col-start-8 bg-gray-50 rounded-[4px] p-6 space-y-6">
+            <div className="w-full aspect-square rounded-[4px] overflow-hidden bg-gray-200">
               <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" alt="Psychology consultant" className="w-full h-full object-cover" />
             </div>
             <div className="space-y-4">
@@ -173,7 +173,7 @@ export default function Inquiry({ testProfile }) {
 
       {/* 3. CALL TO ACTION BLOCK WITH INQUIRY FORM */}
       <section id="inquiry" className="max-w-7xl mx-auto px-6 py-12">
-        <div className="bg-gray-50 rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2 items-center border border-gray-100 shadow-sm">
+        <div className="bg-gray-50 rounded-[4px] overflow-hidden grid grid-cols-1 md:grid-cols-2 items-center border border-gray-100 shadow-sm">
           <div className="p-8 md:p-12 space-y-6">
             <h2 className="text-3xl font-normal tracking-tight text-gray-900 font-header uppercase">Consultation Request</h2>
             <p className="text-gray-500 font-light text-sm max-w-sm">
@@ -181,7 +181,7 @@ export default function Inquiry({ testProfile }) {
             </p>
             
             {testProfile && (
-              <div className="p-4 bg-emerald-50 border border-emerald-250 text-emerald-800 rounded-xl text-xs font-semibold flex items-center gap-2">
+              <div className="p-4 bg-emerald-50 border border-emerald-250 text-emerald-800 rounded-[4px] text-xs font-semibold flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-emerald-600 animate-pulse" /> Pre-filled with diagnostic test scores ({testProfile.dominantDomain} profile).
               </div>
             )}
@@ -198,7 +198,7 @@ export default function Inquiry({ testProfile }) {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Student Name"
-                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-md text-sm outline-none focus:border-brand transition"
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-[4px] text-sm outline-none focus:border-brand transition"
                   />
                   {formErrors.name && <p className="text-red-500 font-bold">{formErrors.name}</p>}
                 </div>
@@ -212,7 +212,7 @@ export default function Inquiry({ testProfile }) {
                     value={formData.mobile}
                     onChange={handleChange}
                     placeholder="10-Digit Mobile"
-                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-md text-sm outline-none focus:border-brand transition"
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-[4px] text-sm outline-none focus:border-brand transition"
                   />
                   {formErrors.mobile && <p className="text-red-500 font-bold">{formErrors.mobile}</p>}
                 </div>
@@ -225,7 +225,7 @@ export default function Inquiry({ testProfile }) {
                   id="service-select"
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-md text-sm outline-none focus:border-brand transition cursor-pointer"
+                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-[4px] text-sm outline-none focus:border-brand transition cursor-pointer"
                 >
                   <option value="Career Guidance">Career Guidance</option>
                   <option value="Aptitude Test Booking">Aptitude Test Booking</option>
@@ -243,14 +243,14 @@ export default function Inquiry({ testProfile }) {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Details regarding stream, class or queries..."
-                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-md text-sm outline-none focus:border-brand transition resize-none"
+                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-[4px] text-sm outline-none focus:border-brand transition resize-none"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3 bg-brand hover:bg-brand-dark text-white font-bold text-xs uppercase tracking-wider rounded-md transition flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+                className="w-full py-3 bg-brand hover:bg-brand-dark text-white font-bold text-xs uppercase tracking-wider rounded-[4px] transition flex items-center justify-center gap-2 cursor-pointer shadow-sm"
               >
                 {isSubmitting ? (
                   <>
@@ -266,7 +266,7 @@ export default function Inquiry({ testProfile }) {
               </button>
 
               {submitStatus === 'success' && (
-                <div className="p-3 bg-emerald-50 border border-emerald-250 text-emerald-800 rounded-md text-center font-bold text-xs">
+                <div className="p-3 bg-emerald-50 border border-emerald-250 text-emerald-800 rounded-[4px] text-center font-bold text-xs">
                   ✓ Inquiry sent successfully! Our coordinator will contact you shortly.
                 </div>
               )}

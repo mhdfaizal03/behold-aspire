@@ -133,11 +133,11 @@ export default function Services({ setView, onBookTherapist }) {
   return (
     <section id="services" className="max-w-7xl mx-auto px-6 py-24 md:py-32 text-black text-left relative">
       {/* Background radial soft light */}
-      <div className="absolute top-1/2 left-1/4 w-[350px] h-[350px] bg-brand/10 rounded-full glow-glow pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 w-[350px] h-[350px] bg-brand/10 rounded-[4px] glow-glow pointer-events-none" />
 
       {/* Editorial Header */}
       <div className="mb-16 md:mb-24 space-y-4">
-        <span className="text-[10px] bg-black text-white px-3.5 py-1 rounded-full uppercase tracking-wider font-extrabold w-fit block">
+        <span className="text-[10px] bg-black text-white px-3.5 py-1 rounded-[4px] uppercase tracking-wider font-extrabold w-fit block">
           our core specialities
         </span>
         <h2 className="text-4xl md:text-5xl font-header font-black tracking-tight text-gray-900 leading-tight uppercase">
@@ -159,12 +159,12 @@ export default function Services({ setView, onBookTherapist }) {
           <div className="space-y-6">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
               <div className="space-y-2">
-                <span className="text-[9px] bg-brand text-black px-3 py-1 rounded-full uppercase tracking-widest font-black font-mono">
+                <span className="text-[9px] bg-brand text-black px-3 py-1 rounded-[4px] uppercase tracking-widest font-black font-mono">
                   scientific strengths mapping
                 </span>
                 <h3 className="text-2xl md:text-3xl font-header font-black uppercase tracking-wide text-black mt-1">Aptitude Test</h3>
               </div>
-              <span className="text-[10px] text-black/50 font-bold tracking-wider uppercase border border-black/10 px-3 py-1 rounded-full bg-white/50 backdrop-blur-xs">
+              <span className="text-[10px] text-black/50 font-bold tracking-wider uppercase border border-black/10 px-3 py-1 rounded-[4px] bg-white/50 backdrop-blur-xs">
                 Service 01
               </span>
             </div>
@@ -185,13 +185,13 @@ export default function Services({ setView, onBookTherapist }) {
               <div className="flex gap-4 flex-wrap">
                 <button 
                   onClick={() => setView('test')}
-                  className="px-6 py-3.5 bg-black hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-widest rounded-full transition cursor-pointer shadow-sm"
+                  className="px-6 py-3.5 bg-black hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-widest rounded-[4px] transition cursor-pointer shadow-sm"
                 >
                   Take Aptitude Test
                 </button>
                 <button 
                   onClick={() => setShowAptitudeForm(true)}
-                  className="px-6 py-3.5 bg-brand hover:bg-brand-dark text-black font-bold text-xs uppercase tracking-widest rounded-full transition cursor-pointer shadow-sm border border-black/5"
+                  className="px-6 py-3.5 bg-brand hover:bg-brand-dark text-black font-bold text-xs uppercase tracking-widest rounded-[4px] transition cursor-pointer shadow-sm border border-black/5"
                 >
                   Book Aptitude (CDAC Registration)
                 </button>
@@ -211,7 +211,7 @@ export default function Services({ setView, onBookTherapist }) {
                 </div>
 
                 {isAutofilled && (
-                  <div className="p-4 bg-brand/10 border border-brand/30 text-black/80 rounded-2xl text-xs flex items-center justify-between max-w-xl">
+                  <div className="p-4 bg-brand/10 border border-brand/30 text-black/80 rounded-[4px] text-xs flex items-center justify-between max-w-xl">
                     <span className="flex items-center gap-2 font-medium">
                       <Sparkles className="w-4 h-4 text-black animate-pulse" />
                       Autofilled 25+ parameters from your student profile.
@@ -237,19 +237,19 @@ export default function Services({ setView, onBookTherapist }) {
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">Name of Student</label>
-                          <input required type="text" name="name" placeholder="Your full name" value={aptitudeForm.name} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand" />
+                          <input required type="text" name="name" placeholder="Your full name" value={aptitudeForm.name} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand" />
                         </div>
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">Email</label>
-                          <input required type="email" name="email" placeholder="name@email.com" value={aptitudeForm.email} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand" />
+                          <input required type="email" name="email" placeholder="name@email.com" value={aptitudeForm.email} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand" />
                         </div>
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">Confirm Email</label>
-                          <input required type="email" name="confirmEmail" placeholder="Re-enter email" value={aptitudeForm.confirmEmail} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand" />
+                          <input required type="email" name="confirmEmail" placeholder="Re-enter email" value={aptitudeForm.confirmEmail} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand" />
                         </div>
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">Date of Birth</label>
-                          <input required type="text" name="dob" placeholder="as 25-01-2006" value={aptitudeForm.dob} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand" />
+                          <input required type="text" name="dob" placeholder="as 25-01-2006" value={aptitudeForm.dob} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand" />
                         </div>
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold mb-1">Gender</label>
@@ -265,17 +265,17 @@ export default function Services({ setView, onBookTherapist }) {
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">Phone</label>
                           <div className="flex gap-2">
-                            <input type="text" name="phoneCode" value={aptitudeForm.phoneCode} onChange={handleInputChange} className="w-16 p-3.5 bg-white/70 border border-black/10 rounded-xl text-center" />
-                            <input required type="tel" name="phone" placeholder="e.g. 8086664001" value={aptitudeForm.phone} onChange={handleInputChange} className="flex-1 p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand" />
+                            <input type="text" name="phoneCode" value={aptitudeForm.phoneCode} onChange={handleInputChange} className="w-16 p-3.5 bg-white/70 border border-black/10 rounded-[4px] text-center" />
+                            <input required type="tel" name="phone" placeholder="e.g. 8086664001" value={aptitudeForm.phone} onChange={handleInputChange} className="flex-1 p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand" />
                           </div>
                         </div>
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">WhatsApp</label>
-                          <input type="tel" name="whatsapp" placeholder="e.g. 8086664001" value={aptitudeForm.whatsapp} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand" />
+                          <input type="tel" name="whatsapp" placeholder="e.g. 8086664001" value={aptitudeForm.whatsapp} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand" />
                         </div>
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">Home District</label>
-                          <select name="homeDistrict" value={aptitudeForm.homeDistrict} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand cursor-pointer">
+                          <select name="homeDistrict" value={aptitudeForm.homeDistrict} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand cursor-pointer">
                             <option value="">Select District</option>
                             {DISTRICTS_KERALA.map(d => (
                               <option key={d} value={d}>{d}</option>
@@ -284,7 +284,7 @@ export default function Services({ setView, onBookTherapist }) {
                         </div>
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">Grade</label>
-                          <select name="grade" value={aptitudeForm.grade} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand cursor-pointer">
+                          <select name="grade" value={aptitudeForm.grade} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand cursor-pointer">
                             <option value="">Select Grade</option>
                             {['Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Graduate', 'Other'].map(g => (
                               <option key={g} value={g}>{g}</option>
@@ -302,15 +302,15 @@ export default function Services({ setView, onBookTherapist }) {
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="space-y-2 md:col-span-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">School Name</label>
-                          <input type="text" name="schoolName" placeholder="Name of the school" value={aptitudeForm.schoolName} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand" />
+                          <input type="text" name="schoolName" placeholder="Name of the school" value={aptitudeForm.schoolName} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand" />
                         </div>
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">School State</label>
-                          <input type="text" name="schoolState" value={aptitudeForm.schoolState} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand" />
+                          <input type="text" name="schoolState" value={aptitudeForm.schoolState} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand" />
                         </div>
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">School District</label>
-                          <select name="schoolDistrict" value={aptitudeForm.schoolDistrict} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand cursor-pointer">
+                          <select name="schoolDistrict" value={aptitudeForm.schoolDistrict} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand cursor-pointer">
                             <option value="">Select District</option>
                             {DISTRICTS_KERALA.map(d => (
                               <option key={d} value={d}>{d}</option>
@@ -350,15 +350,15 @@ export default function Services({ setView, onBookTherapist }) {
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="space-y-2 md:col-span-3">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">Career Interests</label>
-                          <input type="text" name="careerInterests" placeholder="You can give more than one profession" value={aptitudeForm.careerInterests} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand" />
+                          <input type="text" name="careerInterests" placeholder="You can give more than one profession" value={aptitudeForm.careerInterests} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand" />
                         </div>
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">Special Talents</label>
-                          <input type="text" name="specialTalents" placeholder="music, painting, cricket, athletics, etc." value={aptitudeForm.specialTalents} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand" />
+                          <input type="text" name="specialTalents" placeholder="music, painting, cricket, athletics, etc." value={aptitudeForm.specialTalents} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand" />
                         </div>
                         <div className="space-y-2 md:col-span-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">Achievements</label>
-                          <input type="text" name="achievements" placeholder="Recognition in School / District / State Level" value={aptitudeForm.achievements} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand" />
+                          <input type="text" name="achievements" placeholder="Recognition in School / District / State Level" value={aptitudeForm.achievements} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand" />
                         </div>
                       </div>
                     </div>
@@ -371,11 +371,11 @@ export default function Services({ setView, onBookTherapist }) {
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">Guardian Name</label>
-                          <input required type="text" name="guardianName" placeholder="name of parent or guardian" value={aptitudeForm.guardianName} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand" />
+                          <input required type="text" name="guardianName" placeholder="name of parent or guardian" value={aptitudeForm.guardianName} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand" />
                         </div>
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">Relationship</label>
-                          <select name="guardianRelationship" value={aptitudeForm.guardianRelationship} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand cursor-pointer">
+                          <select name="guardianRelationship" value={aptitudeForm.guardianRelationship} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand cursor-pointer">
                             <option value="Father">Father</option>
                             <option value="Mother">Mother</option>
                             <option value="Uncle">Uncle</option>
@@ -385,19 +385,19 @@ export default function Services({ setView, onBookTherapist }) {
                         </div>
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">Guardian Phone</label>
-                          <input type="tel" name="guardianPhone" placeholder="Guardian mobile number" value={aptitudeForm.guardianPhone} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand" />
+                          <input type="tel" name="guardianPhone" placeholder="Guardian mobile number" value={aptitudeForm.guardianPhone} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand" />
                         </div>
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">Father's Education</label>
-                          <input type="text" name="fatherQualification" placeholder="Qualification of Father" value={aptitudeForm.fatherQualification} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand" />
+                          <input type="text" name="fatherQualification" placeholder="Qualification of Father" value={aptitudeForm.fatherQualification} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand" />
                         </div>
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">Mother's Education</label>
-                          <input type="text" name="motherQualification" placeholder="Qualification of Mother" value={aptitudeForm.motherQualification} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand" />
+                          <input type="text" name="motherQualification" placeholder="Qualification of Mother" value={aptitudeForm.motherQualification} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand" />
                         </div>
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">Father's Occupation</label>
-                          <input type="text" name="fatherOccupation" placeholder="Occupation of Father" value={aptitudeForm.fatherOccupation} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand" />
+                          <input type="text" name="fatherOccupation" placeholder="Occupation of Father" value={aptitudeForm.fatherOccupation} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand" />
                         </div>
                       </div>
                     </div>
@@ -410,7 +410,7 @@ export default function Services({ setView, onBookTherapist }) {
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">Preferred Batch</label>
-                          <select name="preferredBatch" value={aptitudeForm.preferredBatch} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand cursor-pointer">
+                          <select name="preferredBatch" value={aptitudeForm.preferredBatch} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand cursor-pointer">
                             <option value="">Select Batch</option>
                             <option value="Batch A (Weekends)">Batch A (Weekends)</option>
                             <option value="Batch B (Weekdays)">Batch B (Weekdays)</option>
@@ -419,7 +419,7 @@ export default function Services({ setView, onBookTherapist }) {
                         </div>
                         <div className="space-y-2">
                           <label className="text-black/50 uppercase tracking-wider block text-[9px] font-extrabold">Group Code</label>
-                          <input type="text" name="groupCode" placeholder="Group Code" value={aptitudeForm.groupCode} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-xl outline-none focus:border-brand font-mono font-bold uppercase" />
+                          <input type="text" name="groupCode" placeholder="Group Code" value={aptitudeForm.groupCode} onChange={handleInputChange} className="w-full p-3.5 bg-white/70 border border-black/10 rounded-[4px] outline-none focus:border-brand font-mono font-bold uppercase" />
                         </div>
                       </div>
                     </div>
@@ -429,7 +429,7 @@ export default function Services({ setView, onBookTherapist }) {
                   <div className="pt-6 border-t border-black/[0.05] flex items-center gap-4">
                     <button 
                       type="submit"
-                      className="px-8 py-4 bg-black hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-widest rounded-full transition cursor-pointer inline-flex items-center gap-2 shadow-md"
+                      className="px-8 py-4 bg-black hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-widest rounded-[4px] transition cursor-pointer inline-flex items-center gap-2 shadow-md"
                     >
                       <span>Submit & Select Counselor</span>
                       <ArrowUpRight className="w-4 h-4 text-brand" />
@@ -455,12 +455,12 @@ export default function Services({ setView, onBookTherapist }) {
             <div className="space-y-4">
               <div className="flex justify-between items-start">
                 <div className="space-y-1">
-                  <span className="text-[9px] bg-black text-white px-2.5 py-0.5 rounded-full uppercase tracking-widest font-black font-mono">
+                  <span className="text-[9px] bg-black text-white px-2.5 py-0.5 rounded-[4px] uppercase tracking-widest font-black font-mono">
                     stream selection & roadmap
                   </span>
                   <h3 className="text-xl md:text-2xl font-header font-black uppercase tracking-wide text-black mt-1">Career Counselling</h3>
                 </div>
-                <span className="text-[9px] text-black/50 font-bold uppercase tracking-wider border border-black/10 px-2 py-0.5 rounded-full bg-white/50 backdrop-blur-xs font-mono">
+                <span className="text-[9px] text-black/50 font-bold uppercase tracking-wider border border-black/10 px-2 py-0.5 rounded-[4px] bg-white/50 backdrop-blur-xs font-mono">
                   02
                 </span>
               </div>
@@ -478,7 +478,7 @@ export default function Services({ setView, onBookTherapist }) {
                 }
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="px-6 py-3 bg-white/80 hover:bg-black hover:text-white border border-black/10 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer self-start shadow-xs hover:shadow-md"
+              className="px-6 py-3 bg-white/80 hover:bg-black hover:text-white border border-black/10 rounded-[4px] text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer self-start shadow-xs hover:shadow-md"
             >
               Configure career session
             </button>
@@ -492,12 +492,12 @@ export default function Services({ setView, onBookTherapist }) {
             <div className="space-y-4">
               <div className="flex justify-between items-start">
                 <div className="space-y-1">
-                  <span className="text-[9px] bg-black text-white px-2.5 py-0.5 rounded-full uppercase tracking-widest font-black font-mono">
+                  <span className="text-[9px] bg-black text-white px-2.5 py-0.5 rounded-[4px] uppercase tracking-widest font-black font-mono">
                     emotional & stress support
                   </span>
                   <h3 className="text-xl md:text-2xl font-header font-black uppercase tracking-wide text-black mt-1">Personal Counselling</h3>
                 </div>
-                <span className="text-[9px] text-black/50 font-bold uppercase tracking-wider border border-black/10 px-2 py-0.5 rounded-full bg-white/50 backdrop-blur-xs font-mono">
+                <span className="text-[9px] text-black/50 font-bold uppercase tracking-wider border border-black/10 px-2 py-0.5 rounded-[4px] bg-white/50 backdrop-blur-xs font-mono">
                   03
                 </span>
               </div>
@@ -515,7 +515,7 @@ export default function Services({ setView, onBookTherapist }) {
                 }
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="px-6 py-3 bg-white/80 hover:bg-black hover:text-white border border-black/10 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer self-start shadow-xs hover:shadow-md"
+              className="px-6 py-3 bg-white/80 hover:bg-black hover:text-white border border-black/10 rounded-[4px] text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer self-start shadow-xs hover:shadow-md"
             >
               Configure counselling session
             </button>

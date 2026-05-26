@@ -44,10 +44,10 @@ export default function Testimonials() {
     <section className="py-24 bg-white/40 backdrop-blur-xs border-y border-black/[0.04] text-left relative select-none">
       
       {/* Background radial glow */}
-      <div className="absolute top-1/4 right-1/3 w-[300px] h-[300px] bg-brand/10 rounded-full glow-glow pointer-events-none" />
+      <div className="absolute top-1/4 right-1/3 w-[300px] h-[300px] bg-brand/10 rounded-[4px] glow-glow pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 mb-16 space-y-4">
-        <span className="text-[10px] bg-black text-white px-3.5 py-1 rounded-full uppercase tracking-wider font-extrabold w-fit block">
+        <span className="text-[10px] bg-black text-white px-3.5 py-1 rounded-[4px] uppercase tracking-wider font-extrabold w-fit block">
           success stories
         </span>
         <h2 className="text-4xl md:text-5xl font-header font-black tracking-tight text-gray-900 leading-tight uppercase">
@@ -63,7 +63,7 @@ export default function Testimonials() {
         {REVIEWS.map((review, idx) => (
           <div 
             key={idx}
-            className="bg-white border border-black/5 rounded-[32px] p-8 shadow-xs flex flex-col justify-between space-y-6 hover:border-brand/40 duration-300 hover:shadow-md transition-all"
+            className="bg-white border border-black/5 rounded-[4px] p-8 shadow-xs flex flex-col justify-between space-y-6 hover:border-brand/40 duration-300 hover:shadow-md transition-all"
           >
             <div className="space-y-4">
               {/* Rating stars */}
@@ -82,7 +82,7 @@ export default function Testimonials() {
             {/* Author Info */}
             <div className="flex items-center justify-between border-t border-black/[0.04] pt-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full overflow-hidden border border-black/5 bg-zinc-100 shrink-0">
+                <div className="w-10 h-10 rounded-[4px] overflow-hidden border border-black/5 bg-zinc-100 shrink-0">
                   <img src={review.avatar} alt={review.author} className="w-full h-full object-cover grayscale" />
                 </div>
                 <div>

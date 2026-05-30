@@ -112,6 +112,7 @@ export default function TherapistDirectory({ onBookTherapist }) {
   const [activeCategory, setActiveCategory] = useState('Consultant Psychologist');
   const [selectedLanguage, setSelectedLanguage] = useState('All');
   const [selectedTherapist, setSelectedTherapist] = useState(null); // For detailed profile modal
+  const [showAllTherapists, setShowAllTherapists] = useState(false);
 
   // Filter therapists
   const filteredTherapists = THERAPISTS.filter(t => {
@@ -122,14 +123,16 @@ export default function TherapistDirectory({ onBookTherapist }) {
     return matchesCategory && matchesLanguage && matchesSearch;
   });
 
+  const displayedTherapists = showAllTherapists ? filteredTherapists : filteredTherapists.slice(0, 3);
+
   return (
     <section className="bg-white text-black py-20 px-4 sm:px-6 border-t border-gray-150 select-none text-left max-w-7xl mx-auto">
       
       {/* TRUST REVIEW STATUS CARDS */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 mb-16 scrollbar-none snap-x snap-mandatory pb-2">
         
         {/* Status Card 1 */}
-        <div className="p-5 border border-brand bg-brand/5 flex items-center gap-4 hover:shadow-md transition-all duration-300">
+        <div className="p-5 border border-brand bg-brand/5 flex items-center gap-4 hover:shadow-md transition-all duration-300 min-w-[280px] md:min-w-0 snap-center shrink-0">
           <div className="w-10 h-10 rounded-[4px] bg-brand flex items-center justify-center text-white">
             <CheckCircle className="w-5 h-5" />
           </div>
@@ -140,7 +143,7 @@ export default function TherapistDirectory({ onBookTherapist }) {
         </div>
 
         {/* Status Card 2 */}
-        <div className="p-5 border border-brand bg-brand/5 flex items-center gap-4 hover:shadow-md transition-all duration-300">
+        <div className="p-5 border border-brand bg-brand/5 flex items-center gap-4 hover:shadow-md transition-all duration-300 min-w-[280px] md:min-w-0 snap-center shrink-0">
           <div className="w-10 h-10 rounded-[4px] bg-brand flex items-center justify-center text-white">
             <Star className="w-5 h-5 fill-white text-brand" />
           </div>
@@ -151,7 +154,7 @@ export default function TherapistDirectory({ onBookTherapist }) {
         </div>
 
         {/* Status Card 3 */}
-        <div className="p-5 border border-brand bg-brand/5 flex items-center gap-4 hover:shadow-md transition-all duration-300">
+        <div className="p-5 border border-brand bg-brand/5 flex items-center gap-4 hover:shadow-md transition-all duration-300 min-w-[280px] md:min-w-0 snap-center shrink-0">
           <div className="w-10 h-10 rounded-[4px] bg-brand flex items-center justify-center text-white">
             <Shield className="w-5 h-5" />
           </div>
@@ -164,11 +167,14 @@ export default function TherapistDirectory({ onBookTherapist }) {
       </div>
 
       {/* SECTION HEADER */}
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-header font-black tracking-tight uppercase text-gray-900 mb-2">
+      <div className="flex flex-col items-center md:items-start text-center md:text-left mb-12 space-y-4">
+        <span className="text-[10px] bg-black text-white px-3.5 py-1 rounded-[4px] uppercase tracking-wider font-extrabold w-fit block">
+          certified advisors
+        </span>
+        <h2 className="text-3xl md:text-4xl font-header font-black tracking-tight uppercase text-gray-900 leading-tight">
           How can we help you?
         </h2>
-        <p className="text-gray-500 font-light text-sm max-w-lg mx-auto">
+        <p className="text-gray-500 font-light text-sm max-w-lg">
           Explore our certified psychological counselors, listen to their intros, and configure direct doorstep booking.
         </p>
       </div>
@@ -224,26 +230,26 @@ export default function TherapistDirectory({ onBookTherapist }) {
       </div>
 
       {/* THERAPIST CARD GRID */}
-      {filteredTherapists.length > 0 ? (
+      {displayedTherapists.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredTherapists.map((therapist) => {
+          {displayedTherapists.map((therapist) => {
             return (
               <div 
                 key={therapist.name}
-                className="bg-white border border-gray-200 rounded-[4px] overflow-hidden hover:shadow-lg hover:border-brand/40 transition-all duration-300 flex flex-col justify-between"
+                className="bg-white border border-gray-200 rounded-[4px] overflow-hidden hover:shadow-lg hover:border-brand/40 transition-all duration-300 flex flex-col justify-between group"
               >
                 
                 {/* 1. Header with soft brand teal accent */}
                 <div className="bg-brand/5 p-5 flex justify-between items-center relative border-b border-gray-150">
                   <div className="space-y-1 max-w-[65%]">
-                    <h3 className="font-bold text-gray-900 text-base leading-tight">{therapist.name}</h3>
+                    <h3 className="font-bold text-gray-900 text-base leading-tight group-hover:text-brand transition-colors duration-300">{therapist.name}</h3>
                     <p className="text-[10px] text-gray-500 uppercase tracking-wide">{therapist.designation}</p>
                   </div>
                   <div className="w-16 h-16 rounded-[4px] overflow-hidden border border-white bg-white shrink-0 shadow-sm">
-                    <img src={therapist.image} alt={therapist.name} className="w-full h-full object-cover" />
+                    <img src={therapist.image} alt={therapist.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                 </div>
-
+ 
                 {/* 2. Focus Tags */}
                 <div className="p-4 flex flex-wrap gap-1.5 border-b border-gray-100 min-h-[64px] items-center">
                   {therapist.tags.map(tag => (
@@ -252,7 +258,7 @@ export default function TherapistDirectory({ onBookTherapist }) {
                     </span>
                   ))}
                 </div>
-
+ 
                 {/* 3. Trust stats row */}
                 <div className="p-4 bg-gray-50/50 border-b border-gray-100 grid grid-cols-3 gap-2 text-center">
                   <div className="space-y-0.5">
@@ -268,7 +274,7 @@ export default function TherapistDirectory({ onBookTherapist }) {
                     <p className="text-[8px] text-gray-400 uppercase tracking-wider">Per session</p>
                   </div>
                 </div>
-
+ 
                 {/* 4. Next available alert and action buttons */}
                 <div className="p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 bg-gray-50/30 border-t border-gray-100">
                   <div className="space-y-0.5">
@@ -280,14 +286,14 @@ export default function TherapistDirectory({ onBookTherapist }) {
                     <button
                       type="button"
                       onClick={() => setSelectedTherapist(therapist)}
-                      className="border border-brand hover:bg-brand/5 text-brand px-3.5 py-2 rounded-[4px] text-[10px] font-bold uppercase tracking-wider transition cursor-pointer w-full sm:w-auto text-center"
+                      className="border border-brand hover:bg-brand/5 text-brand px-3.5 py-2 rounded-[4px] text-[10px] font-bold uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer w-full sm:w-auto text-center"
                     >
                       View Profile
                     </button>
                     <button
                       type="button"
                       onClick={() => onBookTherapist(therapist.id)}
-                      className={`px-4 py-2 text-[10px] font-extrabold uppercase tracking-wider transition cursor-pointer rounded-[4px] shadow-xs w-full sm:w-auto text-center ${
+                      className={`px-4 py-2 text-[10px] font-extrabold uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer rounded-[4px] shadow-xs w-full sm:w-auto text-center ${
                         therapist.action === 'FOLLOW UP ONLY'
                           ? 'bg-gray-600 hover:bg-gray-700 text-white'
                           : 'bg-brand hover:bg-brand-dark text-white border border-brand/50'
@@ -297,7 +303,6 @@ export default function TherapistDirectory({ onBookTherapist }) {
                     </button>
                   </div>
                 </div>
-
               </div>
             );
           })}
@@ -308,12 +313,17 @@ export default function TherapistDirectory({ onBookTherapist }) {
         </div>
       )}
 
-      {/* VIEW MORE THERAPIST BUTTON */}
-      <div className="mt-12 text-center">
-        <button className="px-6 py-2.5 bg-black hover:bg-brand text-white font-bold text-[10px] uppercase tracking-widest rounded-[4px] transition cursor-pointer w-full sm:w-auto text-center">
-          View more therapist
-        </button>
-      </div>
+      {/* VIEW MORE THERAPISTS BUTTON */}
+      {filteredTherapists.length > 3 && (
+        <div className="mt-12 text-center">
+          <button 
+            onClick={() => setShowAllTherapists(!showAllTherapists)}
+            className="px-6 py-2.5 bg-black hover:bg-brand text-white font-bold text-[10px] uppercase tracking-widest rounded-[4px] transition cursor-pointer w-full sm:w-auto text-center"
+          >
+            {showAllTherapists ? 'Show Less' : 'View more therapists'}
+          </button>
+        </div>
+      )}
 
       {/* DETAILED PROFILE MODAL */}
       {selectedTherapist && (

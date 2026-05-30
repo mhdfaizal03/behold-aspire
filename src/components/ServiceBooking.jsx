@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Globe, MapPin, Building, Calendar, Clock, User, 
+import {
+  Globe, MapPin, Building, Calendar, Clock, User,
   CreditCard, CheckCircle2, Sparkles, Bell, ArrowRight, Info
 } from 'lucide-react';
 
@@ -102,9 +102,25 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
     if (preselectedAdvisorId) {
       const found = ADVISORS.find(a => a.id === preselectedAdvisorId);
       if (found) {
-        setBookingService('counselling'); // All directory therapists are counselling psychologists
+        setBookingService(found.type); // Dynamically set based on advisor type (counselling or career)
         setSelectedAdvisor(found);
         setAdvisorConfirmed(true);
+        
+        // Auto-scroll to the booking console form
+        setTimeout(() => {
+          const element = document.getElementById('booking-console');
+          if (element) {
+            const offset = 85;
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = element.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }, 150);
       }
       if (clearPreselectedAdvisor) {
         clearPreselectedAdvisor();
@@ -120,9 +136,35 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
     }
   }, [bookingService]);
 
+  const handleModeSelect = (service, mode) => {
+    setBookingService(service);
+    setBookingMode(mode);
+
+    // Smoothly scroll to the booking console
+    setTimeout(() => {
+      const element = document.getElementById('booking-console');
+      if (element) {
+        const offset = 80;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setBookingForm(prev => ({ ...prev, [name]: value }));
+    setBookingForm(prev => {
+      const updated = { ...prev, [name]: value };
+      localStorage.setItem('behold_student_profile', JSON.stringify(updated));
+      return updated;
+    });
     setIsAutofilled(false);
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: null }));
@@ -167,13 +209,16 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
   return (
     <div className="min-h-screen pt-24 pb-20 bg-white text-black text-left font-sans border-b border-gray-150">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-16">
-        
+
         {/* Header */}
-        <div className="text-center">
+        <div className="text-center flex flex-col items-center space-y-4">
+          <span className="text-[10px] bg-black text-white px-3.5 py-1 rounded-[4px] uppercase tracking-wider font-extrabold w-fit block">
+            booking engine
+          </span>
           <h1 className="text-3xl md:text-5xl font-header font-black tracking-tight leading-none text-gray-900 uppercase">
             Service Booking Flows
           </h1>
-          <p className="mt-4 text-gray-500 max-w-xl mx-auto text-sm md:text-base leading-relaxed font-light">
+          <p className="text-gray-500 max-w-xl mx-auto text-sm md:text-base leading-relaxed font-light">
             Review our online, doorstep, and offline booking flows, and configure your session details below.
           </p>
         </div>
@@ -184,10 +229,16 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
             Counselling Booking — Flow
           </h2>
           <p className="text-xs text-gray-400">Three session modes: Online | Door step | Office Visit</p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* ONLINE CARD */}
-            <div className="border border-brand p-6 bg-white flex flex-col justify-between">
+            <div
+              onClick={() => handleModeSelect('counselling', 'ONLINE')}
+              className={`border p-6 bg-white flex flex-col justify-between cursor-pointer rounded-[4px] transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98] ${bookingService === 'counselling' && bookingMode === 'ONLINE'
+                ? 'border-brand ring-2 ring-brand/20 bg-brand/5 scale-[1.01]'
+                : 'border-gray-250 hover:border-brand/40 hover:bg-gray-50/30'
+                }`}
+            >
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <Globe className="w-5 h-5 text-brand" />
@@ -205,7 +256,13 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
             </div>
 
             {/* DOOR STEP CARD */}
-            <div className="border border-brand p-6 bg-white flex flex-col justify-between">
+            <div
+              onClick={() => handleModeSelect('counselling', 'DOOR_STEP')}
+              className={`border p-6 bg-white flex flex-col justify-between cursor-pointer rounded-[4px] transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98] ${bookingService === 'counselling' && bookingMode === 'DOOR_STEP'
+                ? 'border-brand ring-2 ring-brand/20 bg-brand/5 scale-[1.01]'
+                : 'border-gray-250 hover:border-brand/40 hover:bg-gray-50/30'
+                }`}
+            >
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="w-5 h-5 text-brand" />
@@ -223,7 +280,13 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
             </div>
 
             {/* OFFLINE CARD */}
-            <div className="border border-brand p-6 bg-white flex flex-col justify-between">
+            <div
+              onClick={() => handleModeSelect('counselling', 'OFFLINE')}
+              className={`border p-6 bg-white flex flex-col justify-between cursor-pointer rounded-[4px] transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98] ${bookingService === 'counselling' && bookingMode === 'OFFLINE'
+                ? 'border-brand ring-2 ring-brand/20 bg-brand/5 scale-[1.01]'
+                : 'border-gray-200 hover:border-brand/40 hover:bg-gray-50/30'
+                }`}
+            >
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <Building className="w-5 h-5 text-brand" />
@@ -251,7 +314,13 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* ONLINE CARD */}
-            <div className="border border-brand p-6 bg-white flex flex-col justify-between">
+            <div
+              onClick={() => handleModeSelect('career', 'ONLINE')}
+              className={`border p-6 bg-white flex flex-col justify-between cursor-pointer rounded-[4px] transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98] ${bookingService === 'career' && bookingMode === 'ONLINE'
+                ? 'border-brand ring-2 ring-brand/20 bg-brand/5 scale-[1.01]'
+                : 'border-gray-200 hover:border-brand/40 hover:bg-gray-50/30'
+                }`}
+            >
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <Globe className="w-5 h-5 text-brand" />
@@ -269,7 +338,13 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
             </div>
 
             {/* DOOR STEP CARD */}
-            <div className="border border-brand p-6 bg-white flex flex-col justify-between">
+            <div
+              onClick={() => handleModeSelect('career', 'DOOR_STEP')}
+              className={`border p-6 bg-white flex flex-col justify-between cursor-pointer rounded-[4px] transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98] ${bookingService === 'career' && bookingMode === 'DOOR_STEP'
+                ? 'border-brand ring-2 ring-brand/20 bg-brand/5 scale-[1.01]'
+                : 'border-gray-200 hover:border-brand/40 hover:bg-gray-50/30'
+                }`}
+            >
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="w-5 h-5 text-brand" />
@@ -287,7 +362,13 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
             </div>
 
             {/* OFFLINE CARD */}
-            <div className="border border-brand p-6 bg-white flex flex-col justify-between">
+            <div
+              onClick={() => handleModeSelect('career', 'OFFLINE')}
+              className={`border p-6 bg-white flex flex-col justify-between cursor-pointer rounded-[4px] transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98] ${bookingService === 'career' && bookingMode === 'OFFLINE'
+                ? 'border-brand ring-2 ring-brand/20 bg-brand/5 scale-[1.01]'
+                : 'border-gray-200 hover:border-brand/40 hover:bg-gray-50/30'
+                }`}
+            >
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <Building className="w-5 h-5 text-brand" />
@@ -307,7 +388,7 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
         </div>
 
         {/* 3. BOOKING CONSOLE */}
-        <div className="border border-brand p-4 sm:p-8 bg-white space-y-6 rounded-[4px]">
+        <div id="booking-console" className="border border-brand p-4 sm:p-8 bg-white space-y-6 rounded-[4px]">
           <h2 className="text-xl font-bold uppercase tracking-wide border-b border-gray-100 pb-3">
             Session Booking Console
           </h2>
@@ -319,7 +400,7 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
               <p className="text-xs text-gray-600 max-w-md mx-auto leading-relaxed">
                 Thank you, <strong>{bookingForm.name}</strong>. Your <strong>{bookingService === 'counselling' ? 'Personal Counselling' : 'Career Counseling'}</strong> session is scheduled on <strong>{selectedDate}</strong> at <strong>{selectedTime}</strong> via <strong>{bookingMode}</strong> with <strong>{selectedAdvisor?.name}</strong>.
               </p>
-              <button 
+              <button
                 onClick={() => {
                   setIsSuccess(false);
                   setSelectedDate('');
@@ -334,10 +415,10 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
             </div>
           ) : (
             <form onSubmit={handleBookingSubmit} className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start text-xs font-medium">
-              
+
               {/* Left Column: Flow Inputs */}
               <div className="lg:col-span-6 space-y-6">
-                
+
                 {/* 1. Date & Time Selectors */}
                 <div className="space-y-1">
                   <label className="text-gray-500 uppercase tracking-wide block font-semibold text-gray-700">1. Select Date & Time Slot</label>
@@ -346,7 +427,7 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
                       <label className="text-gray-500 uppercase tracking-wide flex items-center gap-1">
                         <Calendar className="w-3.5 h-3.5" /> Date
                       </label>
-                      <input 
+                      <input
                         type="date"
                         value={selectedDate}
                         onChange={(e) => setSelectedDate(e.target.value)}
@@ -399,11 +480,10 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
                             type="button"
                             key={m}
                             onClick={() => setBookingMode(m)}
-                            className={`py-2.5 text-[10px] uppercase font-bold border rounded-[4px] transition cursor-pointer ${
-                              bookingMode === m 
-                                ? 'bg-brand text-white border-brand' 
-                                : 'bg-white text-gray-500 border-gray-300 hover:border-brand hover:text-brand'
-                            }`}
+                            className={`py-2.5 text-[10px] uppercase font-bold border rounded-[4px] transition cursor-pointer ${bookingMode === m
+                              ? 'bg-brand text-white border-brand'
+                              : 'bg-white text-gray-500 border-gray-300 hover:border-brand hover:text-brand'
+                              }`}
                           >
                             {m.replace('_', ' ')}
                           </button>
@@ -418,14 +498,13 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
                   <label className="text-gray-500 uppercase tracking-wide block font-semibold text-gray-700">3. Select Advisor</label>
                   <div className="space-y-2">
                     {ADVISORS.filter(advisor => advisor.type === bookingService).map((advisor) => (
-                      <div 
+                      <div
                         key={advisor.id}
                         onClick={() => { setSelectedAdvisor(advisor); setAdvisorConfirmed(false); }}
-                        className={`p-3 border rounded-[4px] flex items-center justify-between gap-3 cursor-pointer transition ${
-                          selectedAdvisor?.id === advisor.id
-                            ? 'bg-brand/5 border-brand shadow-xs'
-                            : 'bg-white border-gray-200 hover:border-brand/40 hover:bg-gray-50'
-                        }`}
+                        className={`p-3 border rounded-[4px] flex items-center justify-between gap-3 cursor-pointer transition ${selectedAdvisor?.id === advisor.id
+                          ? 'bg-brand/5 border-brand shadow-xs'
+                          : 'bg-white border-gray-200 hover:border-brand/40 hover:bg-gray-50'
+                          }`}
                       >
                         <div>
                           <h4 className="font-bold text-gray-900">{advisor.name}</h4>
@@ -446,11 +525,10 @@ export default function ServiceBooking({ preselectedAdvisorId, clearPreselectedA
                       <button
                         type="button"
                         onClick={() => setAdvisorConfirmed(!advisorConfirmed)}
-                        className={`px-3 py-1 rounded-[4px] text-[10px] font-bold transition cursor-pointer ${
-                          advisorConfirmed 
-                            ? 'bg-brand/10 border border-brand/35 text-brand' 
-                            : 'bg-brand text-white hover:bg-brand-dark shadow-sm'
-                        }`}
+                        className={`px-3 py-1 rounded-[4px] text-[10px] font-bold transition cursor-pointer ${advisorConfirmed
+                          ? 'bg-brand/10 border border-brand/35 text-brand'
+                          : 'bg-brand text-white hover:bg-brand-dark shadow-sm'
+                          }`}
                       >
                         {advisorConfirmed ? '✓ Confirmed' : 'Confirm'}
                       </button>

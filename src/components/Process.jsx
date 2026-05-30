@@ -57,8 +57,8 @@ export default function Process() {
       <div className="max-w-7xl mx-auto space-y-16 md:space-y-24">
         
         {/* Header section */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-black/[0.05] pb-8">
-          <div className="space-y-4">
+        <div className="border-b border-black/[0.05] pb-8">
+          <div className="space-y-4 flex flex-col items-center md:items-start text-center md:text-left w-full">
             <span className="text-[10px] bg-black text-white px-3.5 py-1 rounded-[4px] uppercase tracking-wider font-extrabold w-fit block">
               our framework
             </span>
@@ -72,26 +72,26 @@ export default function Process() {
         </div>
 
         {/* Feature Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex overflow-x-auto md:grid md:grid-cols-4 gap-6 pb-4 snap-x snap-mandatory scrollbar-none scroll-smooth">
           {OFFERINGS.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div 
                 key={idx}
-                className="bg-white hover:bg-white/90 border border-black/5 rounded-[4px] p-5 sm:p-8 shadow-xs hover:shadow-lg transition-all duration-500 hover:-translate-y-1 flex flex-col justify-between group"
+                className="bg-white hover:bg-white/90 border border-black/5 rounded-[4px] p-6 shadow-xs hover:shadow-lg transition-all duration-500 hover:-translate-y-1 flex flex-col justify-between group min-w-[280px] md:min-w-0 snap-center shrink-0"
               >
                 <div className="space-y-6">
-                  <div className="w-10 h-10 rounded-[4px] bg-black/5 text-black flex items-center justify-center transition-colors group-hover:bg-black group-hover:text-brand">
-                    <Icon className="w-4 h-4" />
+                  <div className="w-10 h-10 rounded-[4px] bg-black/5 text-black flex items-center justify-center transition-all duration-500 group-hover:scale-105 group-hover:bg-black group-hover:text-brand">
+                    <Icon className="w-4 h-4 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500" />
                   </div>
                   <div className="space-y-2">
-                    <h4 className="font-header font-bold text-xs uppercase tracking-wider text-black">{item.title}</h4>
+                    <h4 className="font-header font-bold text-xs uppercase tracking-wider text-black group-hover:text-brand transition-colors duration-500">{item.title}</h4>
                     <p className="text-black/55 font-sans text-[11px] font-light leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
                 
                 <div className="pt-6 flex justify-end">
-                  <ArrowUpRight className="w-4 h-4 text-black/20 group-hover:text-black transition-colors" />
+                  <ArrowUpRight className="w-4 h-4 text-black/20 group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-500" />
                 </div>
               </div>
             );

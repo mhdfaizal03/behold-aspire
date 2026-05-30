@@ -34,9 +34,9 @@ export default function About({ setView }) {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
         
         {/* Left Column: Text & Tab Selector */}
-        <div className="lg:col-span-6 space-y-8">
+        <div className="lg:col-span-6 space-y-8 flex flex-col items-center lg:items-start text-center lg:text-left">
           
-          <div className="space-y-4">
+          <div className="space-y-4 flex flex-col items-center lg:items-start">
             <span className="text-[10px] bg-black text-white px-3.5 py-1 rounded-[4px] uppercase tracking-wider font-extrabold w-fit block">
               our core purpose
             </span>
@@ -49,7 +49,7 @@ export default function About({ setView }) {
           </div>
 
           {/* Interactive Feature Selectors */}
-          <div className="space-y-3">
+          <div className="space-y-3 w-full">
             {STORY_TABS.map(tab => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -79,7 +79,7 @@ export default function About({ setView }) {
             })}
           </div>
 
-          <div className="pt-4">
+          <div className="pt-4 flex justify-center lg:justify-start w-full">
             <button
               onClick={() => {
                 setView('booking');
@@ -94,7 +94,7 @@ export default function About({ setView }) {
         </div>
 
         {/* Right Column: Immersive visual block */}
-        <div className="lg:col-span-6 relative flex items-center justify-center">
+        <div className="lg:col-span-6 relative flex items-center justify-center hidden sm:flex">
           
           {/* Main Visual Container */}
           <div className="w-full aspect-square md:aspect-[4/3] rounded-[4px] overflow-hidden border border-black/5 shadow-2xl relative bg-zinc-200">

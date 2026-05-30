@@ -18,10 +18,10 @@ export default function Hero({ setView, scrollToSection }) {
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
 
         {/* Left Column: Heading and CTAs */}
-        <div className="lg:col-span-6 space-y-8 fade-in-up">
+        <div className="lg:col-span-6 space-y-8 fade-in-up text-center lg:text-left flex flex-col items-center lg:items-start">
 
           {/* Subtle Tagline */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-xs border border-black/[0.04] rounded-[4px] text-[10px] font-extrabold uppercase tracking-widest text-black/60 shadow-xs">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-xs border border-black/[0.04] rounded-[4px] text-[10px] font-extrabold uppercase tracking-widest text-black/60 shadow-xs w-fit">
             <Sparkles className="w-3.5 h-3.5 text-black" />
             <span>BEHOLD Mentorship Framework</span>
           </div>
@@ -38,7 +38,7 @@ export default function Hero({ setView, scrollToSection }) {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 w-full">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 pt-2 w-full">
             <button
               onClick={handleBookNowClick}
               className="px-8 py-4 bg-brand hover:bg-brand-dark hover:scale-[1.02] active:scale-[0.98] text-xs font-black uppercase tracking-widest transition-all duration-300 cursor-pointer rounded-[4px] shadow-md text-black flex items-center justify-center gap-2 border border-black/5 w-full sm:w-auto"
@@ -55,7 +55,7 @@ export default function Hero({ setView, scrollToSection }) {
           </div>
 
           {/* Stats quick view */}
-          <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-8 border-t border-black/[0.05] max-w-md">
+          <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-8 border-t border-black/[0.05] w-full max-w-md">
             <div>
               <p className="text-2xl font-black text-black">5k+</p>
               <p className="text-[9px] font-bold uppercase tracking-wider text-black/45">Guided</p>
@@ -73,21 +73,21 @@ export default function Hero({ setView, scrollToSection }) {
         </div>
 
         {/* Right Column: Cinematic Image with Floating Visuals */}
-        <div className="lg:col-span-6 relative flex items-center justify-center fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <div className="lg:col-span-6 relative flex items-center justify-center fade-in-up group" style={{ animationDelay: '0.2s' }}>
 
           {/* Main Visual Frame */}
           <div className="w-full aspect-[4/3] md:aspect-[16/11] rounded-[4px] overflow-hidden shadow-2xl border-4 border-white bg-white relative z-10">
             <img
               src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
               alt="Immersive mentoring storytelling visual"
-              className="w-full h-full object-cover grayscale-15 contrast-105"
+              className="w-full h-full object-cover grayscale-15 contrast-105 group-hover:scale-103 transition-transform duration-700"
             />
             {/* Visual Soft Dark Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
           </div>
 
           {/* Floating UI Card 1: Counselling */}
-          <div className="absolute -top-6 -left-6 bg-white/95 backdrop-blur-md border border-black/[0.04] p-4 rounded-[4px] shadow-xl hidden lg:flex items-center gap-3.5 max-w-[220px] z-20 pointer-events-none">
+          <div className="absolute -top-6 -left-6 bg-white/95 backdrop-blur-md border border-black/[0.04] p-4 rounded-[4px] shadow-xl hidden lg:flex items-center gap-3.5 max-w-[220px] z-20 pointer-events-none float-slow">
             <div className="w-9 h-9 rounded-[4px] bg-brand flex items-center justify-center text-black shadow-inner">
               <HeartPulse className="w-4 h-4" />
             </div>
@@ -98,7 +98,7 @@ export default function Hero({ setView, scrollToSection }) {
           </div>
 
           {/* Floating UI Card 2: Career Mapping */}
-          <div className="absolute -bottom-6 -right-6 bg-white/95 backdrop-blur-md border border-black/[0.04] p-4 rounded-[4px] shadow-xl hidden lg:flex items-center gap-3.5 max-w-[220px] z-20 pointer-events-none">
+          <div className="absolute -bottom-6 -right-6 bg-white/95 backdrop-blur-md border border-black/[0.04] p-4 rounded-[4px] shadow-xl hidden lg:flex items-center gap-3.5 max-w-[220px] z-20 pointer-events-none float-fast">
             <div className="w-9 h-9 rounded-[4px] bg-black flex items-center justify-center text-white shadow-md">
               <Compass className="w-4 h-4" />
             </div>
@@ -109,7 +109,7 @@ export default function Hero({ setView, scrollToSection }) {
           </div>
 
           {/* Floating UI Card 3: Trust Badge */}
-          <div className="absolute top-1/2 -right-8 transform -translate-y-1/2 bg-white/95 backdrop-blur-md border border-black/[0.04] px-4 py-2.5 rounded-[4px] shadow-lg hidden lg:flex items-center gap-2 z-20 pointer-events-none">
+          <div className="absolute top-1/2 -right-8 transform -translate-y-1/2 bg-white/95 backdrop-blur-md border border-black/[0.04] px-4 py-2.5 rounded-[4px] shadow-lg hidden lg:flex items-center gap-2 z-20 pointer-events-none float-slow">
             <ShieldCheck className="w-4 h-4 text-emerald-600" />
             <span className="text-[9px] font-black uppercase tracking-wider text-black">RCI Certified Mentors</span>
           </div>

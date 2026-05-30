@@ -24,14 +24,14 @@ export default function FinalCTA({ setView }) {
         <div className="absolute -top-1/4 -right-1/4 w-[500px] h-[500px] bg-brand/20 rounded-[4px] glow-glow pointer-events-none" style={{ filter: 'blur(100px)' }} />
         <div className="absolute -bottom-1/3 -left-1/4 w-[450px] h-[450px] bg-brand/10 rounded-[4px] glow-glow pointer-events-none" style={{ filter: 'blur(90px)' }} />
 
-        <div className="max-w-3xl space-y-8 relative z-10">
+        <div className="max-w-3xl space-y-8 relative z-10 flex flex-col items-center md:items-start text-center md:text-left mx-auto md:mx-0">
           
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-xs border border-white/[0.08] rounded-[4px] text-[10px] font-extrabold uppercase tracking-widest text-brand">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-xs border border-white/[0.08] rounded-[4px] text-[10px] font-extrabold uppercase tracking-widest text-brand w-fit">
             <Sparkles className="w-3.5 h-3.5" />
             <span>start today</span>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 flex flex-col items-center md:items-start">
             <h2 className="text-4xl md:text-6xl font-header font-black tracking-tight text-white leading-tight uppercase">
               Every Student Deserves <br />
               Clear Direction
@@ -41,7 +41,7 @@ export default function FinalCTA({ setView }) {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4 w-full">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center md:justify-start gap-4 pt-4 w-full">
             <button
               onClick={handleGetStarted}
               className="px-8 py-4 bg-brand hover:bg-brand-dark text-black font-bold text-xs uppercase tracking-widest rounded-[4px] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2 border border-black/5 w-full sm:w-auto"

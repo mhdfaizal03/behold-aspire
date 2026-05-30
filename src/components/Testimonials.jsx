@@ -46,7 +46,7 @@ export default function Testimonials() {
       {/* Background radial glow */}
       <div className="absolute top-1/4 right-1/3 w-[300px] h-[300px] bg-brand/10 rounded-[4px] glow-glow pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-16 space-y-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-16 space-y-4 flex flex-col items-center md:items-start text-center md:text-left">
         <span className="text-[10px] bg-black text-white px-3.5 py-1 rounded-[4px] uppercase tracking-wider font-extrabold w-fit block">
           success stories
         </span>
@@ -59,17 +59,17 @@ export default function Testimonials() {
       </div>
 
       {/* Static Testimonials Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex overflow-x-auto md:grid md:grid-cols-3 gap-6 snap-x snap-mandatory scrollbar-none pb-4">
         {REVIEWS.map((review, idx) => (
           <div 
             key={idx}
-            className="bg-white border border-black/5 rounded-[4px] p-5 sm:p-8 shadow-xs flex flex-col justify-between space-y-6 hover:border-brand/40 duration-300 hover:shadow-md transition-all"
+            className="bg-white border border-black/5 rounded-[4px] p-6 shadow-xs hover:border-brand/40 duration-350 hover:shadow-md transition-all min-w-[280px] md:min-w-0 snap-center shrink-0 group"
           >
             <div className="space-y-4">
               {/* Rating stars */}
               <div className="flex gap-1 text-black">
                 {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-current" />
+                  <Star key={i} className="w-3.5 h-3.5 fill-current group-hover:text-brand transition-colors duration-500" />
                 ))}
               </div>
               
@@ -83,15 +83,15 @@ export default function Testimonials() {
             <div className="flex items-center justify-between border-t border-black/[0.04] pt-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-[4px] overflow-hidden border border-black/5 bg-zinc-100 shrink-0">
-                  <img src={review.avatar} alt={review.author} className="w-full h-full object-cover grayscale" />
+                  <img src={review.avatar} alt={review.author} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                 </div>
                 <div>
-                  <h4 className="font-header font-bold text-xs uppercase tracking-wider text-black">{review.author}</h4>
+                  <h4 className="font-header font-bold text-xs uppercase tracking-wider text-black group-hover:text-brand transition-colors duration-500">{review.author}</h4>
                   <p className="text-black/40 text-[9px] font-bold uppercase tracking-wider">{review.role}</p>
                 </div>
               </div>
               
-              <Quote className="w-5 h-5 text-black/10 shrink-0" />
+              <Quote className="w-5 h-5 text-black/10 group-hover:text-brand/35 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shrink-0" />
             </div>
           </div>
         ))}

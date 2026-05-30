@@ -60,7 +60,11 @@ export default function StudentProfile({ setView }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setProfile(prev => ({ ...prev, [name]: value }));
+    setProfile(prev => {
+      const updated = { ...prev, [name]: value };
+      localStorage.setItem('behold_student_profile', JSON.stringify(updated));
+      return updated;
+    });
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: null }));
     }
